@@ -1,14 +1,11 @@
 import './App.css';
+import Record from './components/Record';
 
 import DaysLeft from './components/days_left.jsx'
 
 function App() {
   return (
-    <div>
-      <br/>
-      <DaysLeft/>
-    </div>
-
+    <Record/>
   );
 }
 
