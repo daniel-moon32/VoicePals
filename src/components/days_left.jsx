@@ -14,7 +14,6 @@ export default function DaysLeft() {
             px: 0.5,
             mx: 1,
             display: 'inline',
-            // backgroundColor: 'primary.dark',
             '&:hover': {
                 backgroundColor: 'primary.main',
                 opacity: [0.9, 0.8, 0.7],
