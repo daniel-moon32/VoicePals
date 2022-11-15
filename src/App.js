@@ -1,4 +1,6 @@
 import './App.css';
+
+import DaysLeft from './components/days_left';
 import TimeTravel from './components/time_travel';
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
     <div>
       <br />
       <TimeTravel />
+      <DaysLeft />
     </div>
   );
 }
