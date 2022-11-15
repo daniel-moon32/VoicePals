@@ -1,11 +1,15 @@
 import './App.css';
-import HeaderExample from './pages/HeaderExample';
+import MainScreen from './pages/MainScreen';
+//import HeaderExample from './pages/HeaderExample';
 
 function App() {
   return (
     <>
+    {/* <HeaderExample/> */}
     
-    <HeaderExample/>
+
+      <MainScreen/>
+    
 
     </>
 

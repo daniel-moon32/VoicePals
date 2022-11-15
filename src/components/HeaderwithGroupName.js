@@ -1,11 +1,11 @@
 import Header from "./Header";
 import GroupName from "./GroupName";
 
-function HeaderwithGroupName(props) {
+function HeaderwithGroupName(header) {
   return (
     <>
     <Header />
-    <GroupName name = {props.name}/>
+    <GroupName groupName = {header.name}/>
    
     </>
 
