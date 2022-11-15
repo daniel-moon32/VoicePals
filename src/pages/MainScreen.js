@@ -1,20 +1,16 @@
-import GroupBanner from "../components/GroupBanner";
-import HeaderwithSearch from "../components/HeaderwithSearch";
+import GroupBanner from '../components/GroupBanner';
+import HeaderwithSearch from '../components/HeaderwithSearch';
 
-function MainScreen(){
+function MainScreen() {
+  return (
+    <>
 
-    return(
-        <>
+      <HeaderwithSearch />
 
-            <HeaderwithSearch/>
-            
-            <GroupBanner/>
+      <GroupBanner />
 
-      
-
-            
-        </>
-    )
+    </>
+  );
 }
 
 export default MainScreen;

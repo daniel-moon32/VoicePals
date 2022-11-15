@@ -7,9 +7,17 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
+    "@mui/system": "^5.10.14",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "audio-react-recorder": "^1.0.4",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -19,7 +27,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext js,jsx",
+    "lint:fix": "eslint --fix src --ext js,jsx",
+    "format": "prettier --write \"./**/*.{js,jsx,css,scss,json,md}\"",
+    "format:check": "prettier --check \"./**/*.{js,jsx,css,scss,json,md}\""
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +50,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "An app to help you better connect with your friends",
+  "main": "index.js",
+  "repository": "git@github.com:daniel-moon32/VoicePals.git",
+  "author": "daniel-moon32 <dm32@illinois.edu>",
+  "license": "MIT"
 }

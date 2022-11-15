@@ -1,14 +1,13 @@
-import Header from "./Header";
-import GroupName from "./GroupName";
+import Header from './Header';
+import GroupName from './GroupName';
 
-function HeaderwithGroupName(header) {
+function HeaderwithGroupName({ name }) {
   return (
     <>
-    <Header />
-    <GroupName groupName = {header.name}/>
-   
-    </>
+      <Header />
+      <GroupName groupName={name} />
 
+    </>
 
   );
 }

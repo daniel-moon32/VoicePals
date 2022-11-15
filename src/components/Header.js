@@ -32,7 +32,7 @@ ElevationScroll.propTypes = {
   window: PropTypes.func,
 };
 
-function Header(props){
+function Header() {
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -42,26 +42,25 @@ function Header(props){
   });
 
   return (
-        <>
-        <ThemeProvider theme={theme}>  
-        <ElevationScroll>
-        <AppBar position="static" sx={{ bgcolor: "#a99aaf" }}>
+    <ThemeProvider theme={theme}>
+      <ElevationScroll>
+        <AppBar position="static" sx={{ bgcolor: '#a99aaf' }}>
           <Toolbar style={{ minHeight: '55px' }}>
-            <Typography 
-                align = 'center'
-                variant="h4" 
-                component="div" 
-                sx={{ flexGrow: 1 }}>
+            <Typography
+              align="center"
+              variant="h4"
+              component="div"
+              sx={{ flexGrow: 1 }}
+            >
               VoicePals
             </Typography>
 
           </Toolbar>
         </AppBar>
-        </ElevationScroll>
+      </ElevationScroll>
 
-        </ThemeProvider>
-      </>
-    );
+    </ThemeProvider>
+  );
 }
 
 export default Header;

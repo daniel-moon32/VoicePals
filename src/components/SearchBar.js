@@ -7,9 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import PropTypes from 'prop-types';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Slide from "@mui/material/Slide";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,38 +48,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  console.log(trigger)
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
 export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <HideOnScroll >
-      <AppBar position="sticky" sx={{ bgcolor: "#c8b0bd" }}>
+
+      <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
         <Toolbar style={{ minHeight: '55px' }}>
           <Search>
             <SearchIconWrapper>
@@ -100,7 +70,7 @@ export default function PrimarySearchAppBar() {
               aria-label="show more"
               aria-controls={() => {}}
               aria-haspopup="true"
-              onClick={() =>{}}
+              onClick={() => {}}
               color="inherit"
             >
               <GroupAddIcon />
@@ -108,8 +78,7 @@ export default function PrimarySearchAppBar() {
           </Box>
         </Toolbar>
       </AppBar>
-      </HideOnScroll>
-      
+
     </Box>
   );
 }

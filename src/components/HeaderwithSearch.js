@@ -1,18 +1,16 @@
-import Header from "./Header";
-import GroupName from "./GroupName";
-import PrimarySearchAppBar from "./SearchBar";
+import Header from './Header';
+import PrimarySearchAppBar from './SearchBar';
 
 function HeaderwithSearch() {
   return (
     <>
-    <Header />
-    
-    <PrimarySearchAppBar/>
-   
+      <Header />
+
+      <PrimarySearchAppBar />
+
     </>
 
-
-  )
+  );
 }
 
 export default HeaderwithSearch;
