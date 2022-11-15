@@ -6,9 +6,7 @@ function HeaderwithGroupName({ name }) {
     <>
       <Header />
       <GroupName groupName={name} />
-
     </>
-
   );
 }
 

@@ -12,14 +12,10 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 
-// const Element2 = () =>{
-//     return(
-//         <AssignmentIcon />
-//     );
-
-// }
-
-function QuestionIcon() { // function that need html render, should start w/ uppercase letter
+// function that need html render, should start w/ uppercase letter
+// arrow func, React.createElement works too;
+// without jsx works too, call {questionIcon} in render
+function QuestionIcon() {
   return (
     <PsychologyAltIcon
       sx={{
@@ -54,9 +50,6 @@ export default function GroupBanner() {
   const question = 'Your turn to ask questions!';
   const listen = 'Answers are ready!';
   const answer = 'Someone has posted a question!';
-
-  // const questionIcon = React.createElement(PageviewIcon, null, null);
-  // without jsx works too, call {questionIcon} in render
 
   const messages = [
     {
@@ -146,15 +139,12 @@ export default function GroupBanner() {
         height: 730,
         overflow: 'hidden',
         overflowY: 'scroll',
-        // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
       }}
     >
       <Paper
         square
         sx={{
           pb: '50px',
-          // bgcolor: '#b1b7c3'
-
         }}
       >
         <List sx={{ mb: 2 }}>
@@ -166,7 +156,6 @@ export default function GroupBanner() {
               {id === 1 && (
               <>
                 <Divider />
-                {/* <ListSubheader sx={{ bgcolor: '#b1b7c3' }}> */}
                 <ListSubheader sx={{ bgcolor: 'background.paper' }}>
                   Today
                 </ListSubheader>

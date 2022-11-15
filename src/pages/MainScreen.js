@@ -4,9 +4,7 @@ import HeaderwithSearch from '../components/HeaderwithSearch';
 function MainScreen() {
   return (
     <>
-
       <HeaderwithSearch />
-
       <GroupBanner />
 
     </>

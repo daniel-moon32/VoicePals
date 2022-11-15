@@ -16,7 +16,6 @@ function GroupName({ groupName }) {
 
   return (
     <ThemeProvider theme={theme}>
-
       <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
         <Toolbar style={{ minHeight: '45px' }}>
           <Container>
@@ -31,12 +30,9 @@ function GroupName({ groupName }) {
             >
               {groupName}
             </Typography>
-
           </Container>
-
         </Toolbar>
       </AppBar>
-
     </ThemeProvider>
   );
 }

@@ -5,11 +5,8 @@ function HeaderwithSearch() {
   return (
     <>
       <Header />
-
       <PrimarySearchAppBar />
-
     </>
-
   );
 }
 
