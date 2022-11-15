@@ -1,9 +1,12 @@
 import './App.css';
-import Record from './components/Record';
+import DaysLeft from './components/days_left';
 
 function App() {
   return (
-    <Record/>
+    <div>
+      <br />
+      <DaysLeft />
+    </div>
   );
 }
 

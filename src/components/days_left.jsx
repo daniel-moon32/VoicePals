@@ -1,13 +1,14 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 export default function DaysLeft() {
   return (
     <center>
-    <h3 sx={{display: 'inline'}}>
-        You have 
+      <Typography variant="h6" gutterBottom sx={{ display: 'inline' }}>
+        You have
         <Box
-            sx={{
+          sx={{
             width: 5 / 100,
             border: 3,
             boxShadow: 10,
@@ -15,15 +16,15 @@ export default function DaysLeft() {
             mx: 1,
             display: 'inline',
             '&:hover': {
-                backgroundColor: 'primary.main',
-                opacity: [0.9, 0.8, 0.7],
+              backgroundColor: 'primary.main',
+              opacity: [0.9, 0.8, 0.7],
             },
-            }}
+          }}
         >
-        2
-      </Box>
-      days left to respond
-    </h3>
+          2
+        </Box>
+        days left to respond
+      </Typography>
     </center>
 
   );
