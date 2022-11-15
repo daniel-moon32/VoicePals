@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
-export default function Days_Left() {
+export default function DaysLeft() {
   return (
     <center>
     <h3 sx={{display: 'inline'}}>
