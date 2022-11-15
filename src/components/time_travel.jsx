@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
-export default function Time_Travel() {
+export default function TimeTravel() {
   return (
     <center>
       <Box
