@@ -1656,6 +1656,13 @@
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.10.13.tgz#34068ede2853392ca4fd82ad16d9c1ca664f69b3"
   integrity sha512-zWkWPV/SaNdsIdxAWiuVGZ+Ue3BkfSIlU/BFIrJmuUcwiIa7gQsbI/DOpj1KzLvqZhdEe2wC1aG4nCHfzgc1Hg==
 
+"@mui/icons-material@^5.10.9":
+  version "5.10.9"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.10.9.tgz#f9522c49797caf30146acc576e37ecb4f95bbc38"
+  integrity sha512-sqClXdEM39WKQJOQ0ZCPTptaZgqwibhj2EFV9N0v7BU1PO8y4OcX/a2wIQHn4fNuDjIZktJIBrmU23h7aqlGgg==
+  dependencies:
+    "@babel/runtime" "^7.19.0"
+
 "@mui/material@^5.10.13":
   version "5.10.13"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.10.13.tgz#49c505ed99bc97e573d0cc15bec074b080aacee1"
@@ -2828,6 +2835,13 @@ at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
+
+audio-react-recorder@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/audio-react-recorder/-/audio-react-recorder-1.0.4.tgz#db81f10286c2252af8d42162e1f49dbd1de0dffd"
+  integrity sha512-an7eX0yOGDbZOSu2LvnfWIsI41pkx9nXgtBVbI+9ByS91WKqoVGVb5pbmqHax5sZty2DjOIG/neuxcghIU/ucg==
+  dependencies:
+    prop-types "^15.7.2"
 
 autoprefixer@^10.4.11:
   version "10.4.13"
@@ -7501,7 +7515,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
