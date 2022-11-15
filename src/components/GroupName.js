@@ -25,7 +25,6 @@ function GroupName({ groupName }) {
               component="div"
               sx={{
                 flexGrow: 1,
-                // color: 'black'
               }}
             >
               {groupName}
