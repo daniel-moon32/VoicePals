@@ -1,7 +1,7 @@
 import './GroupChat.css';
 import * as React from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import Header from '../../Components/Header';
+import Header from '../../components/Header';
 // import React, { useEffect, useState } from 'react'
 // import CheckBox from '@mui/material/CheckBox';
 

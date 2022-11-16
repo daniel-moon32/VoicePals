@@ -1,6 +1,6 @@
 import './App.css';
 // import MainScreen from './pages/MainScreen';
-import GroupChat from './Pages/GroupChat/GroupChat';
+import GroupChat from './pages/GroupChat/GroupChat';
 
 function App() {
   return (
