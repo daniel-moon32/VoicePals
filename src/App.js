@@ -1,15 +1,9 @@
 import './App.css';
-
-import DaysLeft from './components/days_left';
-import TimeTravel from './components/time_travel';
+import MainScreen from './pages/MainScreen';
 
 function App() {
   return (
-    <div>
-      <br />
-      <TimeTravel />
-      <DaysLeft />
-    </div>
+    <MainScreen />
   );
 }
 
