@@ -1,10 +1,10 @@
-import GroupBanner from '../components/GroupBanner';
-import HeaderwithSearch from '../components/HeaderwithSearch';
+import GroupBanner from '../Components/GroupBanner';
+import HeaderWithSearch from '../Components/HeaderWithSearch';
 
 function MainScreen() {
   return (
     <>
-      <HeaderwithSearch />
+      <HeaderWithSearch />
       <GroupBanner />
 
     </>

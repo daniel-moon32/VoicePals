@@ -1,9 +1,9 @@
-import HeaderwithGroupName from '../components/HeaderwithGroupName';
+import HeaderWithGroupName from '../Components/HeaderWithGroupName';
 
 function HeaderExample() {
   return (
     <>
-      <HeaderwithGroupName name="Long Live Pinto Bean " />
+      <HeaderWithGroupName name="Long Live Pinto Bean " />
       {/* change the name above if you want to change the group name */}
     </>
 

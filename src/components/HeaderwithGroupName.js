@@ -1,7 +1,7 @@
 import Header from './Header';
 import GroupName from './GroupName';
 
-function HeaderwithGroupName({ name }) {
+function HeaderWithGroupName({ name }) {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ function HeaderwithGroupName({ name }) {
   );
 }
 
-export default HeaderwithGroupName;
+export default HeaderWithGroupName;

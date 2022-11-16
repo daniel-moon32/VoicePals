@@ -1,7 +1,7 @@
 import Header from './Header';
 import PrimarySearchAppBar from './SearchBar';
 
-function HeaderwithSearch() {
+function HeaderWithSearch() {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ function HeaderwithSearch() {
   );
 }
 
-export default HeaderwithSearch;
+export default HeaderWithSearch;
