@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { createTheme, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 
-import Sorry from '../audio/Sorry.mp3';
-import SorryTranscript from '../transcripts/Sorry.vtt';
+import Player from './Player';
+// import Sorry from '../audio/Sorry.mp3';
+// import SorryTranscript from '../transcripts/Sorry.vtt';
 import Josh from '../images/Josh.png';
 
 export default function QuestionAudio() {
@@ -31,7 +32,8 @@ export default function QuestionAudio() {
           />
           <Typography variant="h5">Joshua asks:</Typography>
         </Stack>
-        <Stack direction="row" spacing={1} justifyContent="center" sx={{ mx: 2 }}>
+        <Player />
+        {/* <Stack direction="row" spacing={1} justifyContent="center" sx={{ mx: 2 }}>
           <audio controls>
             <source src={Sorry} type="audio/mpeg" />
             <track src={SorryTranscript} kind="captions" srcLang="en" label="english_captions" />
@@ -42,7 +44,7 @@ export default function QuestionAudio() {
               Convert to Text
             </Typography>
           </Button>
-        </Stack>
+        </Stack> */}
         <hr style={{ width: '92%' }} />
       </ThemeProvider>
     </center>

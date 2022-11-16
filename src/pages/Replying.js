@@ -7,7 +7,7 @@ import QuestionAudio from '../components/QuestionAudio';
 export default function Replying() {
   return (
     <>
-      <HeaderwithGroupName name="Long Live Pinto Bean " />
+      <HeaderwithGroupName name="Long Live Pinto Bean" />
       <br />
       <QuestionAudio />
       <br />
