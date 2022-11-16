@@ -1,9 +1,9 @@
 import './App.css';
-import MainScreen from './pages/MainScreen';
+import CreateGroup from './pages/CreateGroup';
 
 function App() {
   return (
-    <MainScreen />
+    <CreateGroup />
   );
 }
 
