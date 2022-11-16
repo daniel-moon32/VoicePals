@@ -26,6 +26,5 @@ export default function DaysLeft() {
         days left to respond
       </Typography>
     </center>
-
   );
 }

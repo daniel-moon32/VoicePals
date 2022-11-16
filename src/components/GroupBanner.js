@@ -148,7 +148,6 @@ export default function GroupBanner() {
         }}
       >
         <List sx={{ mb: 2 }}>
-
           {messages.map(({
             id, primary, secondary, person, Person2,
           }) => (
@@ -160,7 +159,6 @@ export default function GroupBanner() {
                   Today
                 </ListSubheader>
               </>
-
               )}
               {id === 2 && (
               <>
@@ -200,12 +198,10 @@ export default function GroupBanner() {
                   </Avatar>
                 </ListItemAvatar>
               </ListItem>
-
             </React.Fragment>
           ))}
         </List>
       </Paper>
     </Box>
-
   );
 }

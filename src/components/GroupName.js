@@ -8,9 +8,7 @@ import { ThemeProvider } from '@mui/system';
 function GroupName({ groupName }) {
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        'Bold Italic',
-      ].join(','),
+      fontFamily: ['Bold Italic'].join(','),
     },
   });
 
