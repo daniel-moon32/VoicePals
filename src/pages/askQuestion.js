@@ -121,7 +121,7 @@ export default function AskQuestion() {
                 <Button
                   variant="contained"
                   sx={{
-                    width: 200, padding: 1, margin: 2,
+                    width: 200, padding: 1, margin: 2, color: '#ffffff', bgcolor: '#777490',
                   }}
                 >
                   Done
