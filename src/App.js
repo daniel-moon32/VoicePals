@@ -1,11 +1,9 @@
 import './App.css';
-import { GroupChat } from './Pages/GroupChat/GroupChat';
+import MainScreen from './pages/MainScreen';
 
 function App() {
   return (
-    <div className="App">
-      <GroupChat />
-    </div>
+    <MainScreen />
   );
 }
 
