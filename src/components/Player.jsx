@@ -31,8 +31,9 @@ import winning from '../music/Winning - NEFFEX.mp3';
 // #region -------- Styled Components -----------------------------------------
 const CustomPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: '#F5F5F5',
-  marginLeft: theme.spacing(2),
-  marginRight: theme.spacing(2),
+  marginLeft: theme.spacing(4),
+  marginRight: theme.spacing(4),
+  marginBottom: theme.spacing(1.5),
   padding: theme.spacing(1),
 }));
 
@@ -149,7 +150,7 @@ export default function Player() {
     <>
       <audio src={currentSong} ref={audioPlayer} muted={mute} />
       <CustomPaper>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
           {/* <Stack
             direction="row"
             spacing={1}
@@ -175,7 +176,6 @@ export default function Player() {
             spacing={1}
             sx={{
               display: 'flex',
-              width: '40%',
               alignItems: 'center',
             }}
           >
