@@ -196,12 +196,6 @@ export default function Player() {
             <FastForwardIcon sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={toggleForward} />
             <SkipNextIcon sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={toggleSkipForward} />
           </Stack>
-
-          <Stack sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-          />
         </Box>
         <Stack
           spacing={1}
