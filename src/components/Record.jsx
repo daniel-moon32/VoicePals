@@ -1,24 +1,64 @@
-import { IconButton, TextButton } from '@mui/material';
-import { MicIcon } from '@mui/icons-material';
-import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
-import { useState } from 'react';
+import { IconButton, Button } from '@mui/material';
+import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+import StopIcon from '@mui/icons-material/Stop';
+import { useState, useEffect } from 'react';
+
+import MicRecorder from 'mic-recorder-to-mp3';
+
+const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 function Record() {
-  const [record, setRecord] = useState(RecordState.STOP);
-  const handleStop = (audioData) => {
-    console.log(audioData);
+  const [isRecording, setIsRecording] = useState(false);
+  const [blobURL, setBlobURL] = useState('');
+  const [isBlocked, setIsBlocked] = useState(false);
+
+  const start = () => {
+    if (isBlocked) {
+      console.log('Permission Denied');
+    } else {
+      Mp3Recorder
+        .start()
+        .then(() => {
+          setIsRecording(true);
+        }).catch((e) => console.error(e));
+    }
   };
+
+  const stop = () => {
+    Mp3Recorder
+      .stop()
+      .getMp3()
+      .then(([buffer, blob]) => {
+        const newblobURL = URL.createObjectURL(blob);
+        setBlobURL(newblobURL);
+        setIsRecording(false);
+      }).catch((e) => console.log(e));
+  };
+
+  useEffect(() => {
+    navigator.getUserMedia(
+      { audio: true },
+      () => {
+        console.log('Permission Granted');
+        setIsBlocked(false);
+      },
+      () => {
+        console.log('Permission Denied');
+        setIsBlocked(true);
+      },
+    );
+  }, []);
+
   return (
     <div>
-      <AudioReactRecorder state={record} onStop={handleStop} />
       <IconButton
-        onClick={() => setRecord(
-          record === RecordState.STOP ? RecordState.STOP : RecordState.START,
-        )}
+        onClick={!isRecording ? start : stop}
       >
-        <MicIcon />
+        {isRecording === false ? <KeyboardVoiceIcon /> : <StopIcon />}
       </IconButton>
-      <TextButton>Type Instead</TextButton>
+      <Button>Type Instead</Button>
+
+      <audio controls src={blobURL} />
     </div>
   );
 }
