@@ -37,6 +37,7 @@ function GroupName({ groupName }) {
             component="div"
             sx={{
               flexGrow: 1,
+              marginRight: '48px',
             }}
           >
             {groupName}
