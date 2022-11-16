@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Box, createTheme } from '@mui/material';
+import { Box, createTheme, IconButton } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -20,7 +20,7 @@ function GroupName({ groupName }) {
       <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
         <Toolbar style={{ minHeight: '50px' }}>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <ArrowBackIcon
+            <IconButton
               size="large"
               aria-label="show more"
               aria-controls={() => {}}
@@ -29,7 +29,7 @@ function GroupName({ groupName }) {
               color="inherit"
             >
               <ArrowBackIcon />
-            </ArrowBackIcon>
+            </IconButton>
           </Box>
           <Typography
             align="center"
