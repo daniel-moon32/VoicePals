@@ -8,7 +8,7 @@ import GroupName from '../components/GroupName';
 import Player from '../components/Player';
 import AnswerPlayer from '../components/AnswerPlayer';
 
-import fade from '../audio/As You Fade Away - NEFFEX.mp3';
+import question from '../audio/question.m4a';
 import Josh from '../images/Josh.png';
 import Piglet from '../images/piglet.png';
 import Pooh from '../images/pooh.png';
@@ -53,7 +53,7 @@ export default function ReadListen() {
                 }}
               />
             </div>
-            <AnswerPlayer currentSong={fade} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={question} sx={{ width: 10 }} />
           </Stack>
           <br />
 
@@ -129,7 +129,7 @@ export default function ReadListen() {
         </Paper>
         <br />
         <Player
-          playlist={[Fire, Desire, Believe, Want, Two]}
+          playlist={[question, Fire, Desire, Believe, Want, Two]}
           sx={{
             position: 'fixed', bottom: 0, left: 0, right: 0,
           }}
