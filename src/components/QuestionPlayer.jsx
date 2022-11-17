@@ -14,6 +14,7 @@ import immortal from '../music/Immortal - NEFFEX.mp3';
 import playDead from '../music/Play Dead - NEFFEX.mp3';
 import winning from '../music/Winning - NEFFEX.mp3';
 import Josh from '../images/Josh.png';
+import ConvertText from './ConvertText';
 
 const CustomPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: '#F5F5F5',
@@ -111,7 +112,7 @@ export default function Player() {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            pr: 1.5,
+            pr: 0,
           }}
         >
           {!isPlaying
@@ -120,6 +121,7 @@ export default function Player() {
           <Typography sx={{ color: '#777490' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
           <Typography sx={{ color: '#777490' }}>{formatTime(duration - elapsed)}</Typography>
+          <ConvertText />
         </Stack>
       </CustomPaper>
     </>
