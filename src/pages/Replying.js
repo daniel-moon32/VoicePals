@@ -3,6 +3,7 @@ import GroupName from '../components/GroupName';
 import SendButton from '../components/SendButton';
 import TimeTravel from '../components/TimeTravel';
 import QuestionAudio from '../components/QuestionAudio';
+import Record from '../components/Record';
 
 export default function Replying() {
   return (
@@ -16,6 +17,7 @@ export default function Replying() {
       <br />
       <DaysLeft />
       <br />
+      <Record />
       <SendButton />
     </>
   );

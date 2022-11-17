@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,7 +51,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-
       <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
         <Toolbar style={{ minHeight: '55px' }}>
           <Search>
@@ -64,20 +64,21 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={() => {}}
-              aria-haspopup="true"
-              onClick={() => {}}
-              color="inherit"
-            >
-              <GroupAddIcon />
-            </IconButton>
+            <Link to="/createGroup" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={() => {}}
+                aria-haspopup="true"
+                onClick={() => {}}
+                color="inherit"
+              >
+                <GroupAddIcon />
+              </IconButton>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
-
     </Box>
   );
 }
