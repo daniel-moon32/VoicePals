@@ -115,7 +115,6 @@ export default function AskQuestion() {
                     </Grid>
                   </Grid>
 
-
                 </Grid>
                 <Grid item width={300}>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -180,7 +179,6 @@ export default function AskQuestion() {
                       />
                     </Grid>
                   </Grid>
-
 
                 </Grid>
                 <Grid item alignItems="center">
