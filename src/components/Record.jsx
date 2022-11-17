@@ -1,4 +1,6 @@
-import { IconButton, Button } from '@mui/material';
+import {
+  IconButton, Button, Stack, Box, TextField,
+} from '@mui/material';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import StopIcon from '@mui/icons-material/Stop';
 import { useState, useEffect } from 'react';
@@ -11,6 +13,7 @@ function Record() {
   const [isRecording, setIsRecording] = useState(false);
   const [blobURL, setBlobURL] = useState('');
   const [isBlocked, setIsBlocked] = useState(false);
+  const [isTextbox, setIsTextbox] = useState(false);
 
   const start = () => {
     if (isBlocked) {
@@ -39,27 +42,31 @@ function Record() {
     navigator.getUserMedia(
       { audio: true },
       () => {
-        console.log('Permission Granted');
         setIsBlocked(false);
       },
       () => {
-        console.log('Permission Denied');
         setIsBlocked(true);
       },
     );
   }, []);
 
   return (
-    <div>
-      <IconButton
-        onClick={!isRecording ? start : stop}
-      >
-        {isRecording === false ? <KeyboardVoiceIcon /> : <StopIcon />}
-      </IconButton>
-      <Button>Type Instead</Button>
-
-      <audio controls src={blobURL} />
-    </div>
+    <Box>
+      <Stack spacing={2} sx={{ width: '10%', margin: 'auto' }}>
+        <>
+          <IconButton
+            sx={{ margin: 'auto', display: 'block' }}
+            onClick={!isRecording ? start : stop}
+          >
+            {isRecording === false ? <KeyboardVoiceIcon /> : <StopIcon />}
+          </IconButton>
+          <Button onClick={() => setIsTextbox(!isTextbox)}>Type Instead</Button>
+          <audio controls src={blobURL} />
+        </>
+        {isTextbox
+          && <TextField />}
+      </Stack>
+    </Box>
   );
 }
 
