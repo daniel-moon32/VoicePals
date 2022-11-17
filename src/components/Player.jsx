@@ -21,7 +21,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 // #endregion ------------ ICONS ---------
 
 // #region ------- Tracts -------------------------------------------------------
-import fade from '../audio/As You Fade Away - NEFFEX.mp3';
+// import fade from '../audio/As You Fade Away - NEFFEX.mp3';
 // #endregion ---------------------------------------------------------------
 
 // #region -------- Styled Components -----------------------------------------
@@ -35,7 +35,6 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 
 const PSlider = styled(Slider)(({ theme, ...props }) => ({
   color: '#777490',
-  height: 2,
   '&:hover': {
     cursor: 'auto',
   },
@@ -47,9 +46,9 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
 }));
 // #endregion ---------------------------------------------------------------
 
-const playlist = [fade]; // Add more for playlist
+// const playlist = [fade]; // Add more for playlist
 
-export default function Player() {
+export default function Player({ playlist }) {
   const audioPlayer = useRef();
 
   const [index, setIndex] = useState(0);
@@ -71,10 +70,23 @@ export default function Player() {
     }
 
     if (isPlaying) {
+      // if (Math.floor(audioPlayer?.current?.duration) === Math.floor(audioPlayer?.current?.currentTime)) {
+      //   if (index >= playlist.length - 1) {
+      //     setIndex(0);
+      //     // eslint-disable-next-line prefer-destructuring
+      //     audioPlayer.current.src = playlist[0];
+      //     audioPlayer.current.play();
+      //   } else {
+      //     console.log(index);
+      //     setIndex((prev) => prev + 1);
+      //     console.log(index);
+      //     audioPlayer.current.src = playlist[index + 1];
+      //     audioPlayer.current.play();
+      //   }
+      // }
       setInterval(() => {
         const duration2 = Math.floor(audioPlayer?.current?.duration);
         const elapsed2 = Math.floor(audioPlayer?.current?.currentTime);
-
         setDuration(duration2);
         setElapsed(elapsed2);
       }, 100);
