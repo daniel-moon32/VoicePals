@@ -23,6 +23,14 @@ function CheckIcon() {
 
 export default function PeopleBanner() {
   const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#a99aaf',
+      },
+      secondary: {
+        main: '#777490',
+      },
+    },
     typography: {
       fontFamily: [
         'Bold Italic',

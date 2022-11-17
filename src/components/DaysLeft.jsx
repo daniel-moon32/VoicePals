@@ -7,6 +7,14 @@ import { ThemeProvider } from '@mui/system';
 
 export default function DaysLeft() {
   const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#a99aaf',
+      },
+      secondary: {
+        main: '#777490',
+      },
+    },
     typography: {
       fontFamily: [
         'Bold Italic',
