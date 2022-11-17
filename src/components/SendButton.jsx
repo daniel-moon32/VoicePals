@@ -5,6 +5,14 @@ import { ThemeProvider } from '@mui/system';
 
 export default function SendButton() {
   const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#a99aaf',
+      },
+      secondary: {
+        main: '#777490',
+      },
+    },
     typography: {
       fontFamily: [
         'Bold Italic',
