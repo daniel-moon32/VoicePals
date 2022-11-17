@@ -2,8 +2,10 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Container, createTheme } from '@mui/material';
+import { Box, createTheme, IconButton } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
 
 function GroupName({ groupName }) {
   const theme = createTheme({
@@ -15,19 +17,32 @@ function GroupName({ groupName }) {
   return (
     <ThemeProvider theme={theme}>
       <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
-        <Toolbar style={{ minHeight: '45px' }}>
-          <Container>
-            <Typography
-              align="center"
-              variant="h6"
-              component="div"
-              sx={{
-                flexGrow: 1,
-              }}
-            >
-              {groupName}
-            </Typography>
-          </Container>
+        <Toolbar style={{ minHeight: '50px' }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={() => {}}
+                aria-haspopup="true"
+                onClick={() => {}}
+                color="inherit"
+              >
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
+          </Box>
+          <Typography
+            align="center"
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              marginRight: '48px',
+            }}
+          >
+            {groupName}
+          </Typography>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

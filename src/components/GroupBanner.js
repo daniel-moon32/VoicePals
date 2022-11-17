@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
+import { Link } from 'react-router-dom';
 
 // function that need html render, should start w/ uppercase letter
 // arrow func, React.createElement works too;
@@ -46,6 +47,18 @@ function AnswerIcon() {
   );
 }
 
+function getLink(status) {
+  if (status === 'ask') {
+    return '/ask';
+  } if (status === 'listen') {
+    return '/listen';
+  } if (status === 'answer') {
+    return '/answer';
+  }
+
+  return '/';
+}
+
 export default function GroupBanner() {
   const question = 'Your turn to ask questions!';
   const listen = 'Answers are ready!';
@@ -57,6 +70,7 @@ export default function GroupBanner() {
       primary: 'THE UNORIGINAL DR. JAQ',
       secondary: question,
       person: 'groupimage/4.jpeg',
+      status: 'ask',
       Person2: QuestionIcon, // Json uppercase letter too
     },
     {
@@ -64,6 +78,7 @@ export default function GroupBanner() {
       primary: 'HAPPY FAMILIES',
       secondary: answer,
       person: 'groupimage/2.jpeg',
+      status: 'answer',
       Person2: AnswerIcon,
     },
     {
@@ -71,6 +86,7 @@ export default function GroupBanner() {
       primary: 'Smart peoPle',
       secondary: question,
       person: 'groupimage/3.jpeg',
+      status: 'ask',
       Person2: QuestionIcon,
     },
     {
@@ -78,6 +94,7 @@ export default function GroupBanner() {
       primary: 'I hate Onions!',
       secondary: listen,
       person: 'groupimage/1.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -85,6 +102,7 @@ export default function GroupBanner() {
       primary: 'Long Live Pinto Bean',
       secondary: listen,
       person: 'groupimage/5.jpeg',
+      status: 'listen_question',
       Person2: ListenIcon,
     },
     {
@@ -92,6 +110,7 @@ export default function GroupBanner() {
       primary: 'Discussion',
       secondary: listen,
       person: 'groupimage/6.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -99,6 +118,7 @@ export default function GroupBanner() {
       primary: 'Summer BBQ',
       secondary: listen,
       person: 'groupimage/7.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -106,6 +126,7 @@ export default function GroupBanner() {
       primary: 'Forever Friend',
       secondary: listen,
       person: 'groupimage/8.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -113,6 +134,7 @@ export default function GroupBanner() {
       primary: 'Running man',
       secondary: listen,
       person: 'groupimage/9.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -120,6 +142,7 @@ export default function GroupBanner() {
       primary: 'Reading and Health',
       secondary: listen,
       person: 'groupimage/10.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
     {
@@ -127,6 +150,7 @@ export default function GroupBanner() {
       primary: 'Secret Place',
       secondary: listen,
       person: 'groupimage/11.jpeg',
+      status: 'listen',
       Person2: ListenIcon,
     },
   ];
@@ -149,7 +173,7 @@ export default function GroupBanner() {
       >
         <List sx={{ mb: 2 }}>
           {messages.map(({
-            id, primary, secondary, person, Person2,
+            id, primary, secondary, person, status, Person2,
           }) => (
             <React.Fragment key={id}>
               {id === 1 && (
@@ -186,18 +210,19 @@ export default function GroupBanner() {
               )}
 
               <Divider variant="inset" component="li" />
-
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar alt="Profile Picture" src={person} />
-                </ListItemAvatar>
-                <ListItemText primary={primary} secondary={secondary} />
-                <ListItemAvatar>
-                  <Avatar sx={{ bgcolor: 'background.paper' }}>
-                    <Person2 />
-                  </Avatar>
-                </ListItemAvatar>
-              </ListItem>
+              <Link to={`${getLink(status)}/1`} style={{ color: 'black', textDecoration: 'none' }}>
+                <ListItem button>
+                  <ListItemAvatar>
+                    <Avatar alt="Profile Picture" src={person} />
+                  </ListItemAvatar>
+                  <ListItemText primary={primary} secondary={secondary} />
+                  <ListItemAvatar>
+                    <Avatar sx={{ bgcolor: 'background.paper' }}>
+                      <Person2 />
+                    </Avatar>
+                  </ListItemAvatar>
+                </ListItem>
+              </Link>
             </React.Fragment>
           ))}
         </List>

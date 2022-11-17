@@ -52,7 +52,7 @@ function Record() {
 
   return (
     <Box>
-      <Stack spacing={2} sx={{ width: '10%', margin: 'auto' }}>
+      <Stack spacing={2} sx={{ width: '100%', margin: 'auto' }}>
         <>
           <IconButton
             sx={{ margin: 'auto', display: 'block' }}
