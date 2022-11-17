@@ -12,7 +12,7 @@ export default function WaitReplying() {
       <QuestionAudio />
       <hr style={{ width: '92%' }} />
       <br />
-      <TimeTravel peopleReply="7" />
+      <TimeTravel peopleReplying="7" />
       <br />
       <WaitReplyNotice />
       <br />
