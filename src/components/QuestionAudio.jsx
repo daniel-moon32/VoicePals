@@ -17,7 +17,6 @@ export default function QuestionAudio() {
     <center>
       <ThemeProvider theme={theme}>
         <QuestionPlayer />
-        <hr style={{ width: '92%' }} />
       </ThemeProvider>
     </center>
   );

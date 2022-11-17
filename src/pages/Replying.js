@@ -10,6 +10,7 @@ export default function Replying() {
       <GroupName groupName="Long Live Pinto Bean" />
       <br />
       <QuestionAudio />
+      <hr style={{ width: '92%' }} />
       <br />
       <TimeTravel />
       <br />

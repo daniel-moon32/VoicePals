@@ -21,11 +21,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 // #endregion ------------ ICONS ---------
 
 // #region ------- Tracts -------------------------------------------------------
-import fade from '../music/As You Fade Away - NEFFEX.mp3';
-import enough from '../music/Enough - NEFFEX.mp3';
-import immortal from '../music/Immortal - NEFFEX.mp3';
-import playDead from '../music/Play Dead - NEFFEX.mp3';
-import winning from '../music/Winning - NEFFEX.mp3';
+import fade from '../audio/As You Fade Away - NEFFEX.mp3';
 // #endregion ---------------------------------------------------------------
 
 // #region -------- Styled Components -----------------------------------------
@@ -51,7 +47,7 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
 }));
 // #endregion ---------------------------------------------------------------
 
-const playlist = [fade, enough, immortal, playDead, winning];
+const playlist = [fade]; // Add more for playlist
 
 export default function Player() {
   const audioPlayer = useRef();
