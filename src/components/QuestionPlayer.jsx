@@ -8,11 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-import fade from '../music/As You Fade Away - NEFFEX.mp3';
-import enough from '../music/Enough - NEFFEX.mp3';
-import immortal from '../music/Immortal - NEFFEX.mp3';
-import playDead from '../music/Play Dead - NEFFEX.mp3';
-import winning from '../music/Winning - NEFFEX.mp3';
+import fade from '../audio/As You Fade Away - NEFFEX.mp3';
 import Josh from '../images/Josh.png';
 import ConvertText from './ConvertText';
 
@@ -37,7 +33,7 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
   },
 }));
 
-const playlist = [fade, enough, immortal, playDead, winning];
+const playlist = [fade];
 
 export default function Player() {
   const audioPlayer = useRef();
@@ -125,7 +121,30 @@ export default function Player() {
           <ConvertText setHasText={setHasText} />
         </Stack>
       </CustomPaper>
-      {hasText && (<Typography>Testing text for transcipt</Typography>)}
+      {hasText && (
+      <Box
+        sx={{
+          width: 80 / 100,
+          border: 1,
+          borderRadius: 1,
+          boxShadow: 4,
+          '&:hover': {
+            backgroundColor: 'primary.main',
+            opacity: [0.9, 0.8, 0.7],
+          },
+          mb: 2,
+        }}
+      >
+        <Typography style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 60, py: 0.5, px: 2 }}>
+          I know you told your friend you are not okay
+          and tell me what is wrong and why you never said you felt that way.
+          I guess you try to stay strong and fake a smile until I look away
+          but I have known you too long.
+          It hurts to watch your blue eyes fade to gray
+          as you fade away, as you fade away.
+        </Typography>
+      </Box>
+      )}
       {/* TODO: Transcript text Here */}
     </>
   );
