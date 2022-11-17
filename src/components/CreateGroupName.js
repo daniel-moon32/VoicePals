@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function CreateGroupName() {
   return (
     <Box sx={{ flexGrow: 1 }}>
 
