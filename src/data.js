@@ -1,4 +1,4 @@
-[
+const data = [
   {
     group_name: 1,
     last_active: '10/15/2022',
@@ -229,3 +229,4 @@
     days_left: 4,
   },
 ];
+export default data;
