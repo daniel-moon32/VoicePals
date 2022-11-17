@@ -1,9 +1,13 @@
 import './App.css';
-import MainScreen from './pages/MainScreen';
+import { Routes, Route } from 'react-router-dom';
+import AskQuestion from './pages/askQuestion';
 
 function App() {
   return (
-    <MainScreen />
+    <Routes>
+      <Route path="/" element={<MainScreen />} />
+      <Route path="/askQuestion" element={<AskQuestion />} />
+    </Routes>
   );
 }
 
