@@ -22,6 +22,7 @@ import Typography from '@mui/material/Typography';
 
 import { DesktopDatePicker } from '@mui/x-date-pickers';
 import GroupName from '../components/GroupName';
+import Record from '../components/Record';
 
 const groupMembers = ['Qiyuan Cheng', 'Allen Shen', 'Joseph Kuang', 'Daniel Moon'];
 
@@ -130,8 +131,7 @@ export default function AskQuestion() {
                   </LocalizationProvider>
                 </Grid>
                 <Grid item>
-                  <div className="other-components">add ask q component here</div>
-
+                  <Record />
                 </Grid>
                 <Grid item>
                   <Button

@@ -3,6 +3,7 @@ import GroupName from '../components/GroupName';
 import SendButton from '../components/SendButton';
 import TimeTravel from '../components/TimeTravel';
 import QuestionAudio from '../components/QuestionAudio';
+import Record from '../components/Record';
 
 export default function Replying() {
   return (
@@ -10,11 +11,13 @@ export default function Replying() {
       <GroupName groupName="Long Live Pinto Bean" />
       <br />
       <QuestionAudio />
+      <hr style={{ width: '92%' }} />
       <br />
       <TimeTravel />
       <br />
       <DaysLeft />
       <br />
+      <Record />
       <SendButton />
     </>
   );
