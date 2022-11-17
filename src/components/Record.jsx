@@ -16,14 +16,12 @@ function Record() {
   const [isTextbox, setIsTextbox] = useState(false);
 
   const start = () => {
-    if (isBlocked) {
-      console.log('Permission Denied');
-    } else {
+    if (!isBlocked) {
       Mp3Recorder
         .start()
         .then(() => {
           setIsRecording(true);
-        }).catch((e) => console.error(e));
+        });
     }
   };
 
@@ -35,7 +33,7 @@ function Record() {
         const newblobURL = URL.createObjectURL(blob);
         setBlobURL(newblobURL);
         setIsRecording(false);
-      }).catch((e) => console.log(e));
+      });
   };
 
   useEffect(() => {
