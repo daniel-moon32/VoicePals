@@ -6,7 +6,6 @@ function MainScreen() {
     <>
       <HeaderwithSearch />
       <GroupBanner />
-
     </>
   );
 }
