@@ -51,7 +51,7 @@ export default function PeopleBanner() {
     {
       id: 4,
       primary: 'Qiyuan Cheng',
-      person: 'personavator/1.jpeg',
+      person: 'personavator/4.jpeg',
       Check: CheckIcon,
     },
     {
@@ -62,32 +62,38 @@ export default function PeopleBanner() {
     },
     {
       id: 6,
-      primary: 'Daniel Moon',
-      person: 'personavator/5.jpeg',
+      primary: 'Easy Ice',
+      person: 'personavator/6.jpeg',
       Check: CheckIcon,
     },
     {
       id: 7,
-      primary: 'Daniel Moon',
-      person: 'personavator/5.jpeg',
+      primary: 'Conner Smith',
+      person: 'personavator/7.jpeg',
       Check: CheckIcon,
     },
     {
       id: 8,
-      primary: 'Daniel Moon',
-      person: 'personavator/5.jpeg',
+      primary: 'Luke Skywalker',
+      person: 'personavator/8.jpeg',
       Check: CheckIcon,
     },
     {
       id: 9,
-      primary: 'Daniel Moon',
-      person: 'personavator/5.jpeg',
+      primary: 'Cillian Murphy',
+      person: 'personavator/9.jpeg',
       Check: CheckIcon,
     },
     {
       id: 10,
-      primary: 'Daniel Moon',
-      person: 'personavator/5.jpeg',
+      primary: 'Bruce Wayne',
+      person: 'personavator/10.jpeg',
+      Check: CheckIcon,
+    },
+    {
+      id: 11,
+      primary: 'Hello Kitty',
+      person: 'personavator/11.jpeg',
       Check: CheckIcon,
     },
   ];
