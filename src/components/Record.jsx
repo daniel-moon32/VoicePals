@@ -53,10 +53,11 @@ function Record() {
       <Stack spacing={2} sx={{ width: '100%', margin: 'auto' }}>
         <>
           <IconButton
-            sx={{ margin: 'auto', display: 'block' }}
+            sx={{ margin: 'auto', display: 'block', outline: 'solid 3px grey' }}
             onClick={!isRecording ? start : stop}
           >
-            {isRecording === false ? <KeyboardVoiceIcon /> : <StopIcon />}
+            {isRecording === false ? <KeyboardVoiceIcon sx={{ fontSize: 80 }} />
+              : <StopIcon sx={{ fontSize: 80 }} />}
           </IconButton>
           <Button onClick={() => setIsTextbox(!isTextbox)}>Type Instead</Button>
           <audio controls src={blobURL} />
