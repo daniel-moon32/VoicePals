@@ -1,11 +1,10 @@
-import DaysLeft from '../components/DaysLeft';
 import GroupName from '../components/GroupName';
-import SendButton from '../components/SendButton';
 import TimeTravel from '../components/TimeTravel';
 import QuestionAudio from '../components/QuestionAudio';
-import Record from '../components/Record';
+import WaitReplyNotice from '../components/WaitReplyNotice';
+import JumptoListenButton from '../components/JumptoListenButton';
 
-export default function Replying() {
+export default function WaitReplying() {
   return (
     <>
       <GroupName groupName="Long Live Pinto Bean" />
@@ -13,12 +12,11 @@ export default function Replying() {
       <QuestionAudio />
       <hr style={{ width: '92%' }} />
       <br />
-      <TimeTravel peopleReplying="6" />
+      <TimeTravel peopleReplying="7" />
       <br />
-      <DaysLeft />
+      <WaitReplyNotice />
       <br />
-      <Record />
-      <SendButton />
+      <JumptoListenButton />
     </>
   );
 }

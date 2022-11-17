@@ -8,12 +8,12 @@ import GroupName from '../components/GroupName';
 import Player from '../components/Player';
 import AnswerPlayer from '../components/AnswerPlayer';
 
-import question from '../audio/question.m4a';
 import Josh from '../images/Josh.png';
 import Piglet from '../images/piglet.png';
 import Pooh from '../images/pooh.png';
 import Tigger from '../images/tigger.png';
 
+import question from '../audio/question.m4a';
 import Fire from '../audio/You Are My Fire.mp3';
 import Desire from '../audio/The One Desire.mp3';
 import Believe from '../audio/Believe When I Say.mp3';
