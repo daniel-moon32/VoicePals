@@ -82,7 +82,6 @@ export default function AskQuestion() {
             ? (
               <>
                 <Grid item>
-                  {/* <Paper style={{paddingLeft:20, paddingRight:20, paddingTop:10, paddingBottom:10, borderRadius:10}}> */}
                   <Grid container direction="row" spacing={2} alignItems="center">
                     <Grid item alignItems="center">
                       <Paper
@@ -114,7 +113,6 @@ export default function AskQuestion() {
                     </Grid>
                   </Grid>
 
-                  {/* </Paper> */}
 
                 </Grid>
                 <Grid item width={300}>
@@ -148,7 +146,6 @@ export default function AskQuestion() {
             ) : (
               <>
                 <Grid item>
-                  {/* <Paper style={{paddingLeft:20, paddingRight:20, paddingTop:10, paddingBottom:10, borderRadius:10}}> */}
                   <Grid container direction="row" spacing={2} alignItems="center">
                     <Grid item alignItems="center">
                       <Paper
@@ -182,7 +179,6 @@ export default function AskQuestion() {
                     </Grid>
                   </Grid>
 
-                  {/* </Paper> */}
 
                 </Grid>
                 <Grid item alignItems="center">
