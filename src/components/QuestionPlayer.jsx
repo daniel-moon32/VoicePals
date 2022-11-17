@@ -43,6 +43,7 @@ export default function Player() {
   const audioPlayer = useRef();
 
   const [index] = useState(0);
+  const [hasText, setHasText] = useState(false);
 
   const [currentSong] = useState(playlist[index]);
 
@@ -121,9 +122,11 @@ export default function Player() {
           <Typography sx={{ color: '#777490' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
           <Typography sx={{ color: '#777490' }}>{formatTime(duration - elapsed)}</Typography>
-          <ConvertText />
+          <ConvertText setHasText={setHasText} />
         </Stack>
       </CustomPaper>
+      {hasText && (<Typography>Testing text for transcipt</Typography>)}
+      {/* TODO: Transcript text Here */}
     </>
   );
 }
