@@ -5,7 +5,7 @@ import AskQuestion from './pages/askQuestion';
 import MainScreen from './pages/MainScreen';
 import Replying from './pages/Replying';
 import CreateGroup from './pages/CreateGroup';
-import Listen from './pages/Listen';
+import ReadListen from './pages/ReadListen';
 import WaitReplying from './pages/WaitReplying';
 
 function App() {
