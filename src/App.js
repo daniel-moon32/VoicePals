@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainScreen data={groups} />} />
       <Route path="/ask/:groupid" element={<AskQuestion data={groups} />} />
-      <Route path="/createGroup" element={<CreateGroup />} />
+      <Route path="/createGroup" element={<CreateGroup groups={groups} setGroups={setGroups} />} />
       <Route path="/answer/:groupid" element={<Replying data={groups} />} />
       <Route path="/listen/:groupid" element={<ReadListen data={groups} />} />
       <Route path="/answer/wait/:groupid" element={<WaitReplying />} />

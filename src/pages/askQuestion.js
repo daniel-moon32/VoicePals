@@ -25,13 +25,11 @@ import { useLocation, useParams } from 'react-router-dom';
 import GroupName from '../components/GroupName';
 import Record from '../components/Record';
 
-const groupMembers = ['Qiyuan Cheng', 'Allen Shen', 'Joseph Kuang', 'Daniel Moon'];
-
 export default function AskQuestion({ data }) {
   const [value, setValue] = useState(null);
 
   const { groupid } = useParams();
-
+  const groupMembers = data[groupid - 1].members.map((member) => member.name);
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -77,15 +75,9 @@ export default function AskQuestion({ data }) {
         >
           <Grid item paddingLeft={3} paddingRight={2}>
             <Typography className="other-components">
-              {data[groupid - 1].members[0].name}
-              {' , '}
-              {data[groupid - 1].members[1].name}
-              {' '}
-              and
-              {' '}
-              {data[groupid - 1].members.length}
-              {' '}
-              others have been added.
+              {`${data[groupid - 1].members[0].name}, ${data[groupid - 1].members[1].name}`}
+              {data[groupid - 1].members.length - 2 ? `, and ${data[groupid - 1].members.length - 2} others have been added.` : ''}
+
             </Typography>
           </Grid>
           {selectedValue === 'Rakshana Jayaprakash'
@@ -119,6 +111,7 @@ export default function AskQuestion({ data }) {
                         selectedValue={selectedValue}
                         open={open}
                         onClose={handleClose}
+                        groupMembers={groupMembers}
                       />
                     </Grid>
                   </Grid>
@@ -207,7 +200,9 @@ export default function AskQuestion({ data }) {
 // https://mui.com/material-ui/react-dialog/
 
 function SimpleDialog(props) {
-  const { onClose, selectedValue, open } = props;
+  const {
+    onClose, selectedValue, open, groupMembers,
+  } = props;
 
   const handleClose = () => {
     onClose(selectedValue);

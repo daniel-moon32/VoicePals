@@ -112,18 +112,27 @@ export default function PeopleBanner({ setGroups, groups }) {
       setErrorContent('Please select at least one friend');
       return;
     }
-    console.log(groupName);
-    console.log(checked);
+
+    const membersList = checked.map((item, index) => {
+      if (item) {
+        return {
+          name: people[index].primary,
+        };
+      }
+      return null;
+    }).filter((item) => item !== null);
+    const newGroupId = groups.length + 1;
     setGroups([...groups, {
-      groupName: groups.length + 1,
-      members: checked,
+      group_id: newGroupId,
+      group_name: groupName,
+      members: membersList,
       status: 'ask',
       leader: 'Allen Shen',
       due_date: '2021-12-31',
       question: [],
       response: [],
     }]);
-    navigate('/');
+    navigate(`/ask/${newGroupId}`);
   }
 
   function handleCheck(index) {
