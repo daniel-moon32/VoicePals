@@ -1,11 +1,11 @@
 import GroupBanner from '../components/GroupBanner';
 import HeaderwithSearch from '../components/HeaderwithSearch';
 
-function MainScreen({ groups }) {
+function MainScreen({ data }) {
   return (
     <>
       <HeaderwithSearch />
-      <GroupBanner groups={groups} />
+      <GroupBanner data={data} />
     </>
   );
 }

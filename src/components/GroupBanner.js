@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-nested-ternary */
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -11,7 +13,8 @@ import Divider from '@mui/material/Divider';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 // function that need html render, should start w/ uppercase letter
 // arrow func, React.createElement works too;
@@ -59,7 +62,9 @@ function getLink(status) {
   return '/';
 }
 
-export default function GroupBanner() {
+export default function GroupBanner({ data }) {
+  const navigate = useNavigate();
+
   const question = 'Your turn to ask questions!';
   const listen = 'Answers are ready!';
   const answer = 'Someone has posted a question!';
@@ -172,53 +177,31 @@ export default function GroupBanner() {
         }}
       >
         <List sx={{ mb: 2 }}>
-          {messages.map(({
-            id, primary, secondary, person, status, Person2,
+          {data.map(({
+            group_id, group_name, person, status,
           }) => (
-            <React.Fragment key={id}>
-              {id === 1 && (
-              <>
-                <Divider />
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  Today
-                </ListSubheader>
-              </>
-              )}
-              {id === 2 && (
-              <>
-                <Divider />
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  November 16th
-                </ListSubheader>
-              </>
-              )}
-              {id === 5 && (
-              <>
-                <Divider />
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  One Week Ago
-                </ListSubheader>
-              </>
-              )}
-              {id === 8 && (
-              <>
-                <Divider />
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  One Month Ago
-                </ListSubheader>
-              </>
-              )}
+            <React.Fragment key={group_id}>
 
               <Divider variant="inset" component="li" />
-              <Link to={`${getLink(status)}/1`} style={{ color: 'black', textDecoration: 'none' }}>
+              <Link to={{ pathname: `${getLink(status)}/${group_id}` }} style={{ color: 'black', textDecoration: 'none' }}>
                 <ListItem button>
                   <ListItemAvatar>
                     <Avatar alt="Profile Picture" src={person} />
                   </ListItemAvatar>
-                  <ListItemText primary={primary} secondary={secondary} />
+                  <ListItemText primary={group_name} secondary="how" />
                   <ListItemAvatar>
                     <Avatar sx={{ bgcolor: 'background.paper' }}>
-                      <Person2 />
+                      {
+                      (status === 'ask') ? (
+                        <QuestionIcon />
+                      ) : (status === 'answer') ? (
+                        <AnswerIcon />
+                      ) : (status === 'listen') ? (
+                        <ListenIcon />
+                      )
+                        : (<Box />)
+
+                      }
                     </Avatar>
                   </ListItemAvatar>
                 </ListItem>
