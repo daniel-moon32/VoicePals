@@ -35,7 +35,7 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
 
 const playlist = [fade];
 
-export default function QuestionPlayer() {
+export default function QuestionPlayer({ question }) {
   const audioPlayer = useRef();
 
   const [index] = useState(0);
@@ -94,13 +94,13 @@ export default function QuestionPlayer() {
         <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <Stack direction="row" spacing={1} justifyContent="center" sx={{ pb: 0.1 }}>
             <Avatar
-              alt="Josh Belser"
+              alt="  Belser"
               src={Josh}
               sx={{
                 boxShadow: 5, width: 36, height: 36,
               }}
             />
-            <Typography variant="h5">Joshua</Typography>
+            <Typography variant="h5">{question[0].username}</Typography>
           </Stack>
         </Box>
         <Stack

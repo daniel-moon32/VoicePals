@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/system';
 
 import QuestionPlayer from './QuestionPlayer';
 
-export default function QuestionAudio() {
+export default function QuestionAudio({ question }) {
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -16,7 +16,7 @@ export default function QuestionAudio() {
   return (
     <center>
       <ThemeProvider theme={theme}>
-        <QuestionPlayer />
+        <QuestionPlayer question={question} />
       </ThemeProvider>
     </center>
   );

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 
-export default function DaysLeft() {
+export default function DaysLeft({ days }) {
   const theme = createTheme({
     palette: {
       primary: {
@@ -41,7 +41,7 @@ export default function DaysLeft() {
               },
             }}
           >
-            2
+            {days}
           </Box>
           days left to respond
         </Typography>
