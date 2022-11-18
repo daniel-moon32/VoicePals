@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import './style.css';
 import {
   Button, Grid, TextField, DialogContent, DialogActions, Paper, ThemeProvider, createTheme,
@@ -21,14 +21,15 @@ import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
 
 import { DesktopDatePicker } from '@mui/x-date-pickers';
+import { useLocation, useParams } from 'react-router-dom';
 import GroupName from '../components/GroupName';
 import Record from '../components/Record';
 
-const groupMembers = ['Qiyuan Cheng', 'Allen Shen', 'Joseph Kuang', 'Daniel Moon'];
-
-export default function AskQuestion() {
+export default function AskQuestion({ data }) {
   const [value, setValue] = useState(null);
 
+  const { groupid } = useParams();
+  const groupMembers = data[groupid - 1].members.map((member) => member.name);
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -64,7 +65,7 @@ export default function AskQuestion() {
   return (
     <ThemeProvider theme={theme}>
       <div className="outerContainer">
-        <GroupName groupName="The Unoriginal Dr JAQ" />
+        <GroupName groupName={data[groupid - 1].group_name} />
         <Grid
           container
           direction="column"
@@ -72,13 +73,11 @@ export default function AskQuestion() {
           rowSpacing={2}
           paddingTop={2}
         >
-          <Grid item>
+          <Grid item paddingLeft={3} paddingRight={2}>
             <Typography className="other-components">
-              Daniel, Joseph and
-              {' '}
-              {groupMembers.length - 2}
-              {' '}
-              others have been added.
+              {`${data[groupid - 1].members[0].name}, ${data[groupid - 1].members[1].name}`}
+              {data[groupid - 1].members.length - 2 ? `, and ${data[groupid - 1].members.length - 2} others have been added.` : ''}
+
             </Typography>
           </Grid>
           {selectedValue === 'Rakshana Jayaprakash'
@@ -112,6 +111,7 @@ export default function AskQuestion() {
                         selectedValue={selectedValue}
                         open={open}
                         onClose={handleClose}
+                        groupMembers={groupMembers}
                       />
                     </Grid>
                   </Grid>
@@ -200,7 +200,9 @@ export default function AskQuestion() {
 // https://mui.com/material-ui/react-dialog/
 
 function SimpleDialog(props) {
-  const { onClose, selectedValue, open } = props;
+  const {
+    onClose, selectedValue, open, groupMembers,
+  } = props;
 
   const handleClose = () => {
     onClose(selectedValue);

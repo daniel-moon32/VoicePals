@@ -12,11 +12,11 @@ function App() {
   const [groups, setGroups] = useState(data);
   return (
     <Routes>
-      <Route path="/" element={<MainScreen />} />
-      <Route path="/ask/:groupid" element={<AskQuestion />} />
-      <Route path="/createGroup" element={<CreateGroup />} />
-      <Route path="/answer/:groupid" element={<Replying />} />
-      <Route path="/listen/:groupid" element={<ReadListen />} />
+      <Route path="/" element={<MainScreen data={groups} />} />
+      <Route path="/ask/:groupid" element={<AskQuestion data={groups} />} />
+      <Route path="/createGroup" element={<CreateGroup groups={groups} setGroups={setGroups} />} />
+      <Route path="/answer/:groupid" element={<Replying data={groups} />} />
+      <Route path="/listen/:groupid" element={<ReadListen data={groups} />} />
       <Route path="/answer/wait/:groupid" element={<WaitReplying />} />
     </Routes>
   );
