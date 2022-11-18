@@ -42,7 +42,7 @@ export default function ReadListen({ data }) {
       <GroupName groupName="Long Live Pinto Bean" />
 
       <ThemeProvider theme={theme}>
-        <Paper style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 250, py: 1.5, px: 2 }}>
+        <Paper style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 600, py: 1.5, px: 2 }}>
           <Stack direction="row" spacing={2}>
             <div>
               <Avatar
@@ -127,7 +127,6 @@ export default function ReadListen({ data }) {
           </Stack>
           <br />
         </Paper>
-        <br />
         <Player
           playlist={[question, Fire, Desire, Believe, Want, Two]}
           sx={{
