@@ -33,13 +33,13 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
 }));
 
 export default function QuestionPlayer({ question }) {
-  const playlist = [question];
+  const playlist = question;
   const audioPlayer = useRef();
 
   const [index] = useState(0);
   const [hasText, setHasText] = useState(false);
 
-  const [currentSong] = useState(playlist[index]);
+  const [currentSong] = useState(playlist[index].content);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume] = useState(30);

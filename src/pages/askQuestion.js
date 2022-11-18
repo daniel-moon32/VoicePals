@@ -19,21 +19,27 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
 
 import { DesktopDatePicker } from '@mui/x-date-pickers';
-import { useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import GroupName from '../components/GroupName';
 import Record from '../components/Record';
 
-export default function AskQuestion({ data }) {
-  const [value, setValue] = useState(null);
+export default function AskQuestion({ groups, setGroups }) {
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
+  const [errorContent, setErrorContent] = useState('');
 
+  const [value, setValue] = useState(null);
+  const [question, setQuestion] = useState('');
+  const [blobURL, setBlobURL] = useState('');
   const { groupid } = useParams();
-  const groupMembers = data[groupid - 1].members.map((member) => member.name);
+  const groupMembers = groups[groupid - 1].members.map((member) => member.name);
   const handleChange = (newValue) => {
     setValue(newValue);
   };
-
+  const groupName = groups[groupid - 1].group_name;
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('Rakshana Jayaprakash');
   // const [loggedInUserName, setLoggedInUserName] = useState('Rakshana Jayaprakash');
@@ -62,10 +68,46 @@ export default function AskQuestion({ data }) {
     },
   });
 
+  function handleSubmit() {
+    if (question === '' && blobURL === '') {
+      setError(true);
+      setErrorContent('Please enter a question');
+      return;
+    }
+
+    if (value === null) {
+      setError(true);
+      setErrorContent('Please select a date');
+      return;
+    }
+
+    const groupCopy = [...groups];
+    const newGroup = {
+      id: groups.length + 1,
+      name: groupName,
+      status: 'answer',
+      members: groupMembers,
+      leader: selectedValue,
+      question: [{
+        isUrl: !!blobURL,
+        content: blobURL || question,
+        username: selectedValue,
+      }],
+      responses: [],
+      days_left: 7,
+      due_date: value,
+    };
+    groupCopy[groupid - 1] = newGroup;
+    setGroups(groupCopy);
+
+    navigate(`/answer/${groupid}`);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <div className="outerContainer">
-        <GroupName groupName={data[groupid - 1].group_name} />
+        {error && (<Alert severity="error">{errorContent}</Alert>)}
+        <GroupName groupName={groups[groupid - 1].group_name} />
         <Grid
           container
           direction="column"
@@ -75,8 +117,8 @@ export default function AskQuestion({ data }) {
         >
           <Grid item paddingLeft={3} paddingRight={2}>
             <Typography className="other-components">
-              {`${data[groupid - 1].members[0].name}, ${data[groupid - 1].members[1].name}`}
-              {data[groupid - 1].members.length - 2 ? `, and ${data[groupid - 1].members.length - 2} others have been added.` : ''}
+              {`${groups[groupid - 1].members[0].name}, ${groups[groupid - 1].members[1].name}`}
+              {groups[groupid - 1].members.length - 2 ? `, and ${groups[groupid - 1].members.length - 2} others have been added.` : ''}
 
             </Typography>
           </Grid>
@@ -130,7 +172,7 @@ export default function AskQuestion({ data }) {
                   </LocalizationProvider>
                 </Grid>
                 <Grid item>
-                  <Record />
+                  <Record blobURL={blobURL} setBlobURL={setBlobURL} question={question} setQuestion={setQuestion} />
                 </Grid>
                 <Grid item>
                   <Button
@@ -138,6 +180,7 @@ export default function AskQuestion({ data }) {
                     sx={{
                       width: 200, padding: 1, margin: 2, color: '#ffffff', bgcolor: '#777490',
                     }}
+                    onClick={() => handleSubmit()}
                   >
                     Done
                   </Button>
