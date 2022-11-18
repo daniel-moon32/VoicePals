@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-import fade from '../audio/As You Fade Away - NEFFEX.mp3';
+import question from '../audio/question.m4a';
 import Josh from '../images/Josh.png';
 import ConvertText from './ConvertText';
 
@@ -33,7 +33,7 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
   },
 }));
 
-const playlist = [fade];
+const playlist = [question];
 
 export default function QuestionPlayer() {
   const audioPlayer = useRef();
