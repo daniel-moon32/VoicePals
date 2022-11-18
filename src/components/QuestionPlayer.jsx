@@ -8,7 +8,6 @@ import Avatar from '@mui/material/Avatar';
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-import question from '../audio/question.m4a';
 import Josh from '../images/Josh.png';
 import ConvertText from './ConvertText';
 
@@ -33,9 +32,8 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
   },
 }));
 
-const playlist = [question];
-
-export default function QuestionPlayer() {
+export default function QuestionPlayer({ question }) {
+  const playlist = [question];
   const audioPlayer = useRef();
 
   const [index] = useState(0);

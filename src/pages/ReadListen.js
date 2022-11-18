@@ -20,7 +20,7 @@ import Believe from '../audio/Believe When I Say.mp3';
 import Want from '../audio/I Want It That Way2.mp3';
 import Two from '../audio/That We Are Two Worlds Apart.mp3';
 
-export default function ReadListen() {
+export default function ReadListen({ data }) {
   const theme = createTheme({
     palette: {
       primary: {

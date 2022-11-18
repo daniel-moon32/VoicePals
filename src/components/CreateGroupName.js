@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CreateGroupName() {
+export default function CreateGroupName({ value, setValue }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
 
@@ -58,6 +58,8 @@ export default function CreateGroupName() {
             <StyledInputBase
               placeholder="Enter Group Name"
               inputProps={{ 'aria-label': 'search' }}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
           </Search>
         </Toolbar>
