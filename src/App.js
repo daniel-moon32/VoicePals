@@ -17,7 +17,7 @@ function App() {
       <Route path="/createGroup" element={<CreateGroup groups={groups} setGroups={setGroups} />} />
       <Route path="/answer/:groupid" element={<Replying data={groups} />} />
       <Route path="/listen/:groupid" element={<ReadListen data={groups} />} />
-      <Route path="/answer/wait/:groupid" element={<WaitReplying />} />
+      <Route path="/answer/wait/:groupid" element={<WaitReplying groups={groups} />} />
     </Routes>
   );
 }

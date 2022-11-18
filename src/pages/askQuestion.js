@@ -1,10 +1,8 @@
 /* eslint-disable max-len */
-
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import './style.css';
 import {
   Button, Grid, TextField, DialogContent, DialogActions, Paper, ThemeProvider, createTheme,
-
 } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -30,7 +28,7 @@ export default function AskQuestion({ groups, setGroups }) {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
   const [errorContent, setErrorContent] = useState('');
-
+  const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [question, setQuestion] = useState('');
   const [blobURL, setBlobURL] = useState('');
@@ -40,7 +38,6 @@ export default function AskQuestion({ groups, setGroups }) {
     setValue(newValue);
   };
   const groupName = groups[groupid - 1].group_name;
-  const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('Rakshana Jayaprakash');
   // const [loggedInUserName, setLoggedInUserName] = useState('Rakshana Jayaprakash');
   const handleClickOpen = () => {

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import DaysLeft from '../components/DaysLeft';
 import GroupName from '../components/GroupName';
 import SendButton from '../components/SendButton';
@@ -8,6 +9,8 @@ import Record from '../components/Record';
 
 export default function Replying({ data }) {
   const { groupid } = useParams();
+  const [blobURL, setBlobURL] = useState('');
+  const [question, setQuestion] = useState('');
 
   return (
     <>
@@ -20,7 +23,12 @@ export default function Replying({ data }) {
       <br />
       <DaysLeft days={data[groupid - 1].days_left} />
       <br />
-      <Record />
+      <Record
+        blobURL={blobURL}
+        setBlobURL={setBlobURL}
+        question={question}
+        setQuestion={setQuestion}
+      />
       <SendButton />
     </>
   );
