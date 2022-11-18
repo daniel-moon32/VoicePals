@@ -25,7 +25,7 @@ export default function SendButton() {
     <center>
       <ThemeProvider theme={theme}>
         <Link to="/answer/wait/:groupid" style={{ color: 'inherit', textDecoration: 'none' }}>
-          <Button variant="contained" sx={{ bgcolor: '#777490', boxShadow: 10 }}>
+          <Button variant="contained" sx={{ color: 'white', bgcolor: '#777490', boxShadow: 10 }}>
             Send
           </Button>
         </Link>
