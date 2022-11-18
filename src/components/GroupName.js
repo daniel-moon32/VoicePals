@@ -5,13 +5,12 @@ import Typography from '@mui/material/Typography';
 import { Box, createTheme, IconButton } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
 
 function GroupName({ groupName }) {
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        'Bold Italic',
-      ].join(','),
+      fontFamily: ['Bold Italic'].join(','),
     },
   });
 
@@ -20,16 +19,18 @@ function GroupName({ groupName }) {
       <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
         <Toolbar style={{ minHeight: '50px' }}>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={() => {}}
-              aria-haspopup="true"
-              onClick={() => {}}
-              color="inherit"
-            >
-              <ArrowBackIcon />
-            </IconButton>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={() => {}}
+                aria-haspopup="true"
+                onClick={() => {}}
+                color="inherit"
+              >
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
           </Box>
           <Typography
             align="center"

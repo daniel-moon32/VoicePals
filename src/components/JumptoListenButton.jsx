@@ -4,16 +4,8 @@ import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 import { Link } from 'react-router-dom';
 
-export default function SendButton() {
+export default function JumptoListenButton() {
   const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#a99aaf',
-      },
-      secondary: {
-        main: '#777490',
-      },
-    },
     typography: {
       fontFamily: [
         'Bold Italic',
@@ -24,11 +16,19 @@ export default function SendButton() {
   return (
     <center>
       <ThemeProvider theme={theme}>
-        <Link to="/answer/wait/:groupid" style={{ color: 'inherit', textDecoration: 'none' }}>
-          <Button variant="contained" sx={{ bgcolor: '#777490', boxShadow: 10 }}>
-            Send
+        <Link to="/listen/:groupid" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: '#ffffff',
+              boxShadow: 10,
+              marginTop: 50,
+            }}
+          >
+            Jump
           </Button>
         </Link>
+
       </ThemeProvider>
     </center>
   );

@@ -8,9 +8,7 @@ import { ThemeProvider } from '@mui/system';
 function Header() {
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        'Cursive',
-      ].join(','),
+      fontFamily: ['Cursive'].join(','),
     },
   });
 

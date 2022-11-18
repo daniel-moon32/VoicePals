@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { createTheme, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 
-export default function TimeTravel() {
+export default function TimeTravel({ peopleReplying }) {
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -29,7 +29,7 @@ export default function TimeTravel() {
           }}
         >
           <Typography variant="h6">Messages Time Traveling...</Typography>
-          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>5</Typography>
+          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>{peopleReplying}</Typography>
         </Box>
       </ThemeProvider>
     </center>
