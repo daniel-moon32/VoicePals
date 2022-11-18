@@ -95,6 +95,22 @@ export default function Player({ playlist }) {
     volume, isPlaying,
   ]);
 
+  useEffect(() => {
+    if (Math.floor(audioPlayer?.current?.duration) === Math.floor(audioPlayer?.current?.currentTime)) {
+      if (index >= playlist.length - 1) {
+        setIndex(0);
+        // eslint-disable-next-line prefer-destructuring
+        audioPlayer.current.src = playlist[0];
+        audioPlayer.current.play();
+      } else {
+        console.log(index);
+        setIndex((prev) => prev + 1)
+        audioPlayer.current.src = playlist[index + 1];
+        audioPlayer.current.play();
+      }
+    }
+  });
+
   function formatTime(time) {
     if (time && !Number.isNaN(time)) {
       const minutes = Math.floor(time / 60) < 10 ? `0${Math.floor(time / 60)}` : Math.floor(time / 60);
