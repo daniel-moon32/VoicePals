@@ -17,7 +17,7 @@ export default function SendButton() {
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

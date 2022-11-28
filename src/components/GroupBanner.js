@@ -24,7 +24,7 @@ function QuestionIcon() {
     <PsychologyAltIcon
       sx={{
         fontSize: 35,
-        color: '#777490',
+        color: '#4682B4',
       }}
     />
   );
@@ -34,7 +34,7 @@ function ListenIcon() {
     <PlayCircleIcon
       sx={{
         fontSize: 35,
-        color: '#777490',
+        color: '#4682B4',
       }}
     />
   );
@@ -44,7 +44,7 @@ function AnswerIcon() {
     <KeyboardVoiceIcon
       sx={{
         fontSize: 35,
-        color: '#777490',
+        color: '#4682B4',
       }}
     />
   );

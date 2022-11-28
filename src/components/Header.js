@@ -8,13 +8,13 @@ import { ThemeProvider } from '@mui/system';
 function Header() {
   const theme = createTheme({
     typography: {
-      fontFamily: ['Cursive'].join(','),
+      fontFamily: ['sans-serif'].join(','),
     },
   });
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static" sx={{ bgcolor: '#a99aaf' }}>
+      <AppBar position="static" sx={{ bgcolor: '#4682B4' }}>
         <Toolbar style={{ minHeight: '55px' }}>
           <Typography
             align="center"

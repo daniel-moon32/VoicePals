@@ -32,7 +32,7 @@ export default function ReadListen({ data }) {
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

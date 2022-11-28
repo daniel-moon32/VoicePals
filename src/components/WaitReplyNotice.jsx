@@ -16,7 +16,7 @@ export default function WaitReplyNotice() {
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });
