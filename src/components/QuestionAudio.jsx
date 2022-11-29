@@ -8,7 +8,7 @@ export default function QuestionAudio({ question }) {
   const theme = createTheme({
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

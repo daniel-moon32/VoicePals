@@ -52,15 +52,15 @@ export default function AskQuestion({ groups, setGroups }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#a99aaf',
+        main: '#4682B4',
       },
       secondary: {
-        main: '#777490',
+        main: '#2C2F33',
       },
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });
@@ -175,7 +175,7 @@ export default function AskQuestion({ groups, setGroups }) {
                   <Button
                     variant="contained"
                     sx={{
-                      width: 200, padding: 1, margin: 2, color: '#ffffff', bgcolor: '#777490',
+                      width: 200, padding: 1, margin: 2, color: '#ffffff', bgcolor: '#4682B4',
                     }}
                     onClick={() => handleSubmit()}
                   >
@@ -255,15 +255,15 @@ function SimpleDialog(props) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#a99aaf',
+        main: '#4682B4',
       },
       secondary: {
-        main: '#777490',
+        main: '#2C2F33',
       },
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

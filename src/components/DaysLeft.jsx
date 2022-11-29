@@ -17,7 +17,7 @@ export default function DaysLeft({ days }) {
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

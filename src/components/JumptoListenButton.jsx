@@ -8,7 +8,7 @@ export default function JumptoListenButton() {
   const theme = createTheme({
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });
@@ -20,7 +20,7 @@ export default function JumptoListenButton() {
           <Button
             variant="contained"
             sx={{
-              bgcolor: '#ffffff',
+              bgcolor: '#4682B4',
               boxShadow: 10,
               marginTop: 50,
             }}

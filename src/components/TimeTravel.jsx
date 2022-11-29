@@ -8,7 +8,7 @@ export default function TimeTravel({ peopleReplying }) {
   const theme = createTheme({
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });

@@ -14,7 +14,7 @@ import { ThemeProvider } from '@mui/system';
 const themeFont = createTheme({
   typography: {
     fontFamily: [
-      'Bold Italic',
+      'sans-serif',
     ].join(','),
   },
 });

@@ -152,7 +152,7 @@ export default function PeopleBanner({ setGroups, groups }) {
     },
     typography: {
       fontFamily: [
-        'Bold Italic',
+        'sans-serif',
       ].join(','),
     },
   });
