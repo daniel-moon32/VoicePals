@@ -10,13 +10,13 @@ import { Link } from 'react-router-dom';
 function GroupName({ groupName }) {
   const theme = createTheme({
     typography: {
-      fontFamily: ['Bold Italic'].join(','),
+      fontFamily: ['sans-serif'].join(','),
     },
   });
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
+      <AppBar position="sticky" sx={{ bgcolor: '#4682B4' }}>
         <Toolbar style={{ minHeight: '50px' }}>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>

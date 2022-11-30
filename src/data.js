@@ -1,6 +1,7 @@
 const data = [
   {
-    group_name: 1,
+    group_id: 1,
+    group_name: 'THE UNORIGINAL DR. JAQ',
     last_active: '10/15/2022',
     status: 'ask', // ask or answer or listen
     members: [
@@ -50,9 +51,11 @@ const data = [
 
     ],
     days_left: 1,
+    person: 'groupimage/1.jpeg',
   },
   {
-    group_name: 2,
+    group_id: 2,
+    group_name: 'Long Live Pinto Bean',
     last_active: '1/1/2022',
     status: 'answer', // ask or answer or listen
     members: [
@@ -109,9 +112,12 @@ const data = [
       },
     ],
     days_left: 2,
+    person: 'groupimage/2.jpeg',
+
   },
   {
-    group_name: 3,
+    group_id: 3,
+    group_name: 'Summer BBQ',
     last_active: '2/12/2022',
     status: 'listen', // ask or answer or listen
     members: [
@@ -168,9 +174,12 @@ const data = [
       },
     ],
     days_left: 3,
+    person: 'groupimage/4.jpeg',
+
   },
   {
-    group_name: 4,
+    group_id: 4,
+    group_name: 'I hate Onions!',
     last_active: '11/18/2021',
     status: 'ask', // ask or answer or listen
     members: [
@@ -227,6 +236,7 @@ const data = [
       },
     ],
     days_left: 4,
+    person: 'groupimage/3.jpeg',
   },
 ];
 export default data;

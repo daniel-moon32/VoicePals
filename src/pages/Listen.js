@@ -16,7 +16,7 @@ const replies = [
   },
 ];
 
-export default function Listen() {
+export default function Listen({ data }) {
   return (
     <>
       <GroupName groupName="The Unoriginal Dr JAQ" />

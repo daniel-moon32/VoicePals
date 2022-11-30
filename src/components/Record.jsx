@@ -9,9 +9,10 @@ import MicRecorder from 'mic-recorder-to-mp3';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
-function Record() {
+function Record({
+  blobURL, setBlobURL, question, setQuestion,
+}) {
   const [isRecording, setIsRecording] = useState(false);
-  const [blobURL, setBlobURL] = useState('');
   const [isBlocked, setIsBlocked] = useState(false);
   const [isTextbox, setIsTextbox] = useState(false);
 
@@ -63,7 +64,7 @@ function Record() {
           <audio controls src={blobURL} />
         </>
         {isTextbox
-          && <TextField />}
+          && <TextField value={question} onChange={(e) => setQuestion(e.target.value)} />}
       </Stack>
     </Box>
   );

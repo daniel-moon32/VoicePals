@@ -5,19 +5,19 @@ import AskQuestion from './pages/askQuestion';
 import MainScreen from './pages/MainScreen';
 import Replying from './pages/Replying';
 import CreateGroup from './pages/CreateGroup';
-import Listen from './pages/Listen';
+import ReadListen from './pages/ReadListen';
 import WaitReplying from './pages/WaitReplying';
 
 function App() {
   const [groups, setGroups] = useState(data);
   return (
     <Routes>
-      <Route path="/" element={<MainScreen />} />
-      <Route path="/ask/:groupid" element={<AskQuestion />} />
-      <Route path="/createGroup" element={<CreateGroup />} />
-      <Route path="/answer/:groupid" element={<Replying />} />
-      <Route path="/listen/:groupid" element={<Listen />} />
-      <Route path="/answer/wait/:groupid" element={<WaitReplying />} />
+      <Route path="/" element={<MainScreen data={groups} />} />
+      <Route path="/ask/:groupid" element={<AskQuestion setGroups={setGroups} groups={groups} />} />
+      <Route path="/createGroup" element={<CreateGroup groups={groups} setGroups={setGroups} />} />
+      <Route path="/answer/:groupid" element={<Replying data={groups} />} />
+      <Route path="/listen/:groupid" element={<ReadListen data={groups} />} />
+      <Route path="/answer/wait/:groupid" element={<WaitReplying groups={groups} />} />
     </Routes>
   );
 }
