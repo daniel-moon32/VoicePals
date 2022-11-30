@@ -239,5 +239,4 @@ const data = [
     person: 'groupimage/3.jpeg',
   },
 ];
-
 export default data;

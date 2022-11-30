@@ -39,7 +39,7 @@ export default function ReadListen({ data }) {
 
   return (
     <>
-      <GroupName groupName="Long Live Pinto Bean" />
+      <GroupName groupName="Summer BBQ" />
 
       <ThemeProvider theme={theme}>
         <Paper style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 600, py: 1.5, px: 2 }}>
