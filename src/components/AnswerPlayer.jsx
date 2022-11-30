@@ -73,7 +73,7 @@ export default function AnswerPlayer({ currentSong }) {
       return '0:00';
     }
     const minutes = Math.floor(audioPlayer.current.duration / 60);
-    const seconds = Math.floor(audioPlayer.current.duration - minutes);
+    const seconds = Math.floor(audioPlayer.current.duration - minutes * 60);
     if (seconds < 10) {
       return `${minutes}:0${seconds}`;
     }
