@@ -34,19 +34,22 @@ export default function AskQuestion({ groups, setGroups }) {
   const [blobURL, setBlobURL] = useState('');
   const { groupid } = useParams();
   const groupMembers = groups[groupid - 1].members.map((member) => member.name);
+  const groupLeader = groups[groupid - 1].leader;
+  let passTo = groupMembers;
+  passTo = passTo.filter((item) => item !== groupLeader);
   const handleChange = (newValue) => {
     setValue(newValue);
   };
   const groupName = groups[groupid - 1].group_name;
-  const [selectedValue, setSelectedValue] = useState('Rakshana Jayaprakash');
+  const [selectedValue, setSelectedValue] = useState(groups[groupid - 1].leader);
   // const [loggedInUserName, setLoggedInUserName] = useState('Rakshana Jayaprakash');
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = (value2) => {
-    setOpen(false);
     setSelectedValue(value2);
+    setOpen(false);
   };
 
   const theme = createTheme({
@@ -119,7 +122,7 @@ export default function AskQuestion({ groups, setGroups }) {
 
             </Typography>
           </Grid>
-          {selectedValue === 'Rakshana Jayaprakash'
+          {selectedValue === groupLeader
             ? (
               <>
                 <Grid item>
@@ -150,7 +153,7 @@ export default function AskQuestion({ groups, setGroups }) {
                         selectedValue={selectedValue}
                         open={open}
                         onClose={handleClose}
-                        groupMembers={groupMembers}
+                        groupMembers={passTo}
                       />
                     </Grid>
                   </Grid>
@@ -211,11 +214,6 @@ export default function AskQuestion({ groups, setGroups }) {
                       >
                         Pass
                       </Button>
-                      <SimpleDialog
-                        selectedValue={selectedValue}
-                        open={open}
-                        onClose={handleClose}
-                      />
                     </Grid>
                   </Grid>
                 </Grid>
