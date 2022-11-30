@@ -68,6 +68,11 @@ export default function GroupBanner({ data }) {
   const question = 'Your turn to ask questions!';
   const listen = 'Answers are ready!';
   const answer = 'Someone has posted a question!';
+  const secondary = {
+    ask: question,
+    listen,
+    answer,
+  };
 
   const messages = [
     {
@@ -188,7 +193,7 @@ export default function GroupBanner({ data }) {
                   <ListItemAvatar>
                     <Avatar alt="Profile Picture" src={person} />
                   </ListItemAvatar>
-                  <ListItemText primary={group_name} secondary="how" />
+                  <ListItemText primary={group_name} secondary={secondary[status]} />
                   <ListItemAvatar>
                     <Avatar sx={{ bgcolor: 'background.paper' }}>
                       {
