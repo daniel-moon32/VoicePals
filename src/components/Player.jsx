@@ -34,7 +34,7 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const PSlider = styled(Slider)(({ theme, ...props }) => ({
-  color: '#777490',
+  color: '#4682B4',
   '&:hover': {
     cursor: 'auto',
   },
@@ -189,20 +189,20 @@ export default function Player({ playlist }) {
           >
             <SkipPreviousIcon
               sx={{
-                color: '#777490',
+                color: '#4682B4',
                 '&:hover': { color: 'white' },
               }}
               onClick={toggleSkipBackward}
               disabled
             />
-            <FastRewindIcon sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={toggleBackward} />
+            <FastRewindIcon sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={toggleBackward} />
 
             {!isPlaying
-              ? <PlayArrowIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />
-              : <PauseIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
+              ? <PlayArrowIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />
+              : <PauseIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
 
-            <FastForwardIcon sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={toggleForward} />
-            <SkipNextIcon sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={toggleSkipForward} />
+            <FastForwardIcon sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={toggleForward} />
+            <SkipNextIcon sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={toggleSkipForward} />
           </Stack>
         </Box>
         <Stack
@@ -213,9 +213,9 @@ export default function Player({ playlist }) {
             alignItems: 'center',
           }}
         >
-          <Typography sx={{ color: '#777490' }}>{formatTime(elapsed)}</Typography>
+          <Typography sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
-          <Typography sx={{ color: '#777490' }}>{formatTime(duration - elapsed)}</Typography>
+          <Typography sx={{ color: '#4682B4' }}>{formatTime(duration - elapsed)}</Typography>
         </Stack>
       </CustomPaper>
     </>

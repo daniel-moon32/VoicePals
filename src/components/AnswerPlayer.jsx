@@ -16,8 +16,8 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const PSlider = styled(Slider)(({ theme, ...props }) => ({
-  color: '#777490',
-  height: 2,
+  color: '#4682B4',
+  height: 5,
   '&:hover': {
     cursor: 'auto',
   },
@@ -37,19 +37,21 @@ export default function AnswerPlayer({ currentSong }) {
 
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
+  let startup = true;
 
   useEffect(() => {
     if (audioPlayer) {
       audioPlayer.current.volume = volume / 100;
     }
 
-    if (isPlaying) {
+    if (isPlaying || startup) {
       setInterval(() => {
         const duration2 = Math.floor(audioPlayer?.current?.duration);
         const elapsed2 = Math.floor(audioPlayer?.current?.currentTime);
 
         setDuration(duration2);
         setElapsed(elapsed2);
+        startup = false;
       }, 100);
     }
   }, [
@@ -58,12 +60,24 @@ export default function AnswerPlayer({ currentSong }) {
 
   function formatTime(time) {
     if (time && !Number.isNaN(time)) {
-      const minutes = Math.floor(time / 60) < 10 ? `0${Math.floor(time / 60)}` : Math.floor(time / 60);
+      const minutes = Math.floor(time / 60) < 10 ? `${Math.floor(time / 60)}` : Math.floor(time / 60);
       const seconds = Math.floor(time % 60) < 10 ? `0${Math.floor(time % 60)}` : Math.floor(time % 60);
 
       return `${minutes}:${seconds}`;
     }
-    return '00:00';
+    return '0:00';
+  }
+
+  function formatTotalTime() {
+    if (audioPlayer.current === undefined) {
+      return '0:00';
+    }
+    const minutes = Math.floor(audioPlayer.current.duration / 60);
+    const seconds = Math.floor(audioPlayer.current.duration - minutes);
+    if (seconds < 10) {
+      return `${minutes}:0${seconds}`;
+    }
+    return `${minutes}:${seconds}`;
   }
 
   const togglePlay = () => {
@@ -90,11 +104,11 @@ export default function AnswerPlayer({ currentSong }) {
           }}
         >
           {!isPlaying
-            ? <PlayArrowIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />
-            : <PauseIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
-          <Typography sx={{ color: '#777490' }}>{formatTime(elapsed)}</Typography>
+            ? <PlayArrowIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />
+            : <PauseIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
+          <Typography sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
-          <Typography sx={{ color: '#777490' }}>{formatTime(duration - elapsed)}</Typography>
+          <Typography sx={{ color: '#4682B4' }}>{formatTotalTime()}</Typography>
         </Stack>
       </CustomPaper>
     </>
