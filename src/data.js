@@ -30,12 +30,12 @@ const data = [
     responses: [
       {
         isURL: false,
-        content: 'blah blah blahblah blah blahblah blah blahblah blah blah',
+        content: 'https://us-tuna-sounds-files.voicemod.net/ea16f90e-fb83-46cc-9976-5d84d8fb2de3-1656751518842.mp3',
         username: 'Reinold Darlington',
       },
       {
         isURL: false,
-        content: 'blah blah blahblah blah blahblah blah blahblah blah blah',
+        content: 'https://us-tuna-sounds-files.voicemod.net/201029cd-c7e5-4d07-8a90-9421fcc30fcc-1656771146469.mp3',
         username: 'Sibeal Cullingford',
       },
       {
@@ -87,7 +87,7 @@ const data = [
     responses: [
       {
         isURL: false,
-        content: 'blah blah blahblah blah blahblah blah blahblah blah blah',
+        content: 'https://us-tuna-sounds-files.voicemod.net/9666e5cb-e286-4c61-8a8c-c50f31f54f9c-1655448182402.mp3',
         username: 'Davita Regan',
       },
       {
@@ -97,7 +97,7 @@ const data = [
       },
       {
         isURL: false,
-        content: 'blah blah blahblah blah blahblah blah blahblah blah blah',
+        content: 'https://us-tuna-sounds-files.voicemod.net/25b8862b-c24b-47d4-80cc-24a8deb77b02-1651218880846.mp3',
         username: 'Veradis Seckington',
       },
       {
