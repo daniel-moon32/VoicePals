@@ -127,6 +127,7 @@ export default function ReadListen({ data }) {
           </Stack>
           <br />
         </Paper>
+        <br />
         <Player
           playlist={[question, Fire, Desire, Believe, Want, Two]}
           sx={{

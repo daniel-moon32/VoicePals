@@ -20,7 +20,7 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const PSlider = styled(Slider)(({ theme, ...props }) => ({
-  color: '#777490',
+  color: '#4682B4',
   height: 5,
   '&:hover': {
     cursor: 'auto',
@@ -125,11 +125,11 @@ export default function QuestionPlayer({ question }) {
           }}
         >
           {!isPlaying
-            ? <PlayArrowIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />
-            : <PauseIcon fontSize="large" sx={{ color: '#777490', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
-          <Typography sx={{ color: '#777490' }}>{formatTime(elapsed)}</Typography>
+            ? <PlayArrowIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />
+            : <PauseIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
+          <Typography sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
-          <Typography sx={{ color: '#777490' }}>{formatTotalTime()}</Typography>
+          <Typography sx={{ color: '#4682B4' }}>{formatTotalTime()}</Typography>
           <ConvertText setHasText={setHasText} />
         </Stack>
       </CustomPaper>
