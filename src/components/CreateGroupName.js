@@ -5,6 +5,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import EditIcon from '@mui/icons-material/Edit';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
+import { IconButton } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -13,7 +16,7 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginRight: theme.spacing(2),
+  marginRight: '25px',
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
@@ -49,8 +52,22 @@ export default function CreateGroupName({ value, setValue }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
 
-      <AppBar position="sticky" sx={{ bgcolor: '#c8b0bd' }}>
+      <AppBar position="sticky" sx={{ bgcolor: '#2C2F33' }}>
         <Toolbar style={{ minHeight: '55px' }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none', marginLeft: '-20px' } }}>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={() => {}}
+                aria-haspopup="true"
+                onClick={() => {}}
+                color="inherit"
+              >
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
+          </Box>
           <Search>
             <EditIconWrapper>
               <EditIcon />
