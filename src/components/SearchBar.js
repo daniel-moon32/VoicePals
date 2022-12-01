@@ -51,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky" sx={{ bgcolor: '#2C2F33' }}>
+      <AppBar position="sticky" sx={{ bgcolor: '#99a5bf' }}>
         <Toolbar style={{ minHeight: '55px' }}>
           <Search>
             <SearchIconWrapper>
