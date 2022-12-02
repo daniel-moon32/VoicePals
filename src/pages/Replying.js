@@ -12,7 +12,7 @@ import TimeTravel from '../components/TimeTravel';
 import QuestionAudio from '../components/QuestionAudio';
 import Record from '../components/Record';
 
-export default function Replying({ groups, setGroup }) {
+export default function Replying({ groups, setGroups }) {
   const navigate = useNavigate();
   const { groupid } = useParams();
   const [ansBlobURL, setAnsBlobURL] = useState('');
@@ -43,10 +43,27 @@ export default function Replying({ groups, setGroup }) {
       return;
     }
     const { responses } = groups[groupid - 1];
-    responses.push(answer);
 
-    const newGroups = { ...groups[groupid - 1] };
-    setGroup(newGroups);
+    const newGroups = [...groups];
+
+    if (ansBlobURL === '') {
+      responses.push({
+        isURL: false,
+        content: answer,
+        username: groups[groupid - 1].leader,
+      });
+    }
+
+    if (answer === '') {
+      responses.push({
+        isURL: true,
+        content: ansBlobURL,
+        username: groups[groupid - 1].leader,
+      });
+    }
+
+    newGroups[groupid - 1].responses = responses;
+    setGroups(newGroups);
     navigate(`/answer/wait/${groupid}`);
   }
 
