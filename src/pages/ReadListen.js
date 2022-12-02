@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/system';
 import GroupName from '../components/GroupName';
 import Player from '../components/Player';
 import AnswerPlayer from '../components/AnswerPlayer';
+import TextResponse from '../components/TextResponse';
 
 import Josh from '../images/Josh.png';
 import Piglet from '../images/piglet.png';
@@ -127,6 +128,19 @@ export default function ReadListen({ data }) {
               />
             </div>
           </Stack>
+          <br />
+
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
+            <TextResponse text="tesjk" />
+            <Avatar
+              alt="Tigger"
+              src={Tigger}
+              sx={{
+                boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
+              }}
+            />
+          </Stack>
+
         </Paper>
         <br />
 

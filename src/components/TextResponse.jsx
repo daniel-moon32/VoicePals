@@ -5,9 +5,8 @@ import {
   createTheme, styled,
   Paper, Typography,
 } from '@mui/material';
-import { ThemeProvider } from '@mui/system';
 
-export default function TextResponse() {
+export default function TextResponse({ text }) {
   const CustomPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: '#F0F0F0',
     marginLeft: theme.spacing(4),
@@ -18,7 +17,7 @@ export default function TextResponse() {
 
   return (
     <CustomPaper>
-      <Typography sx={{ p: 0.55 }} variant="subtitle2">Messages Time Traveling...</Typography>
+      <Typography sx={{ p: 0.55 }} variant="subtitle2">{ text }</Typography>
     </CustomPaper>
   );
 }
