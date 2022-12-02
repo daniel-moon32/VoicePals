@@ -106,8 +106,7 @@ export default function PeopleBanner({ setGroups, groups }) {
       setErrorContent('Please enter a group name');
       return;
     }
-
-    if (checked.length === 0) {
+    if (!checked.some((item) => item === true)) {
       setError(true);
       setErrorContent('Please select at least one friend');
       return;
@@ -122,6 +121,7 @@ export default function PeopleBanner({ setGroups, groups }) {
       return null;
     }).filter((item) => item !== null);
     const newGroupId = groups.length + 1;
+    console.log(membersList);
     setGroups([...groups, {
       group_id: newGroupId,
       group_name: groupName,
