@@ -1,5 +1,6 @@
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
@@ -43,13 +44,14 @@ export default function ReadListen({ data }) {
 
       <ThemeProvider theme={theme}>
         <Paper style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 600, py: 1.5, px: 2 }}>
-          <Stack direction="row" spacing={2}>
+          <br />
+          <Stack direction="row" spacing={1.5}>
             <div>
               <Avatar
                 alt="Josh"
                 src={Josh}
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, ml: 2,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, ml: 0,
                 }}
               />
             </div>
@@ -57,77 +59,77 @@ export default function ReadListen({ data }) {
           </Stack>
           <br />
 
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
             <AnswerPlayer currentSong={Fire} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Pooh"
                 src={Pooh}
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, mr: 2.5,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
                 }}
               />
             </div>
           </Stack>
           <br />
 
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
             <AnswerPlayer currentSong={Desire} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Piglet"
                 src={Piglet}
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, mr: 2.5,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
                 }}
               />
             </div>
           </Stack>
           <br />
 
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
             <AnswerPlayer currentSong={Believe} sx={{ width: 10 }} />
             <div>
               <Avatar
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, mr: 2.5,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
                 }}
               >
-                JK
+                <Typography variant="subtitle2" sx={{ mt: 1 }} gutterBottom>JK</Typography>
               </Avatar>
             </div>
           </Stack>
           <br />
 
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
             <AnswerPlayer currentSong={Want} sx={{ width: 10 }} />
             <div>
               <Avatar
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, mr: 2.5,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
                 }}
               >
-                DM
+                <Typography variant="subtitle2" sx={{ mt: 1 }} gutterBottom>DM</Typography>
               </Avatar>
             </div>
           </Stack>
           <br />
 
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
+          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
             <AnswerPlayer currentSong={Two} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Tigger"
                 src={Tigger}
                 sx={{
-                  boxShadow: 5, width: 36, height: 36, float: 'right', mt: 1, mr: 2.5,
+                  boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
                 }}
               />
             </div>
           </Stack>
-          <br />
         </Paper>
         <br />
+
         <Player
           playlist={[question, Fire, Desire, Believe, Want, Two]}
           sx={{

@@ -12,12 +12,12 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
   marginLeft: theme.spacing(4),
   marginRight: theme.spacing(4),
   marginBottom: theme.spacing(1.5),
-  padding: theme.spacing(1),
+  paddingRight: theme.spacing(1),
 }));
 
 const PSlider = styled(Slider)(({ theme, ...props }) => ({
   color: '#4682B4',
-  height: 5,
+  height: 4,
   '&:hover': {
     cursor: 'auto',
   },
@@ -92,7 +92,7 @@ export default function AnswerPlayer({ currentSong }) {
   return (
     <>
       <audio src={currentSong} ref={audioPlayer} muted={mute} />
-      <CustomPaper sx={{ width: 0.6 }}>
+      <CustomPaper sx={{ width: 0.55 }}>
         <Stack
           spacing={1}
           direction="row"
@@ -104,11 +104,11 @@ export default function AnswerPlayer({ currentSong }) {
           }}
         >
           {!isPlaying
-            ? <PlayArrowIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />
-            : <PauseIcon fontSize="large" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
-          <Typography sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
+            ? <PlayArrowIcon fontSize="medium" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />
+            : <PauseIcon fontSize="medium" sx={{ color: '#4682B4', '&:hover': { color: 'white' } }} onClick={togglePlay} />}
+          <Typography variant="subtitle2" sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
-          <Typography sx={{ color: '#4682B4' }}>{formatTotalTime()}</Typography>
+          <Typography variant="subtitle2" sx={{ color: '#4682B4' }}>{formatTotalTime()}</Typography>
         </Stack>
       </CustomPaper>
     </>
