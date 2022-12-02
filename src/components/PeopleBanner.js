@@ -106,8 +106,7 @@ export default function PeopleBanner({ setGroups, groups }) {
       setErrorContent('Please enter a group name');
       return;
     }
-
-    if (checked.length === 0) {
+    if (!checked.some((item) => item === true)) {
       setError(true);
       setErrorContent('Please select at least one friend');
       return;
