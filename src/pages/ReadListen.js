@@ -2,9 +2,10 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import { createTheme } from '@mui/material';
+import { createTheme, Button } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 
+import { useParams, Link } from 'react-router-dom';
 import GroupName from '../components/GroupName';
 import Player from '../components/Player';
 import AnswerPlayer from '../components/AnswerPlayer';
@@ -26,10 +27,10 @@ export default function ReadListen({ data }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#a99aaf',
+        main: '#4682B4',
       },
       secondary: {
-        main: '#777490',
+        main: '#99a5bf',
       },
     },
     typography: {
@@ -38,12 +39,24 @@ export default function ReadListen({ data }) {
       ].join(','),
     },
   });
+  const { groupid } = useParams();
 
   return (
     <>
       <GroupName groupName="Summer BBQ" />
 
       <ThemeProvider theme={theme}>
+        <Link to={`/ask/${groupid}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: '#4682B4',
+              boxShadow: 10,
+            }}
+          >
+            Repeat loop
+          </Button>
+        </Link>
         <Paper style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 600, py: 1.5, px: 2 }}>
           <br />
           <Stack direction="row" spacing={1.5}>

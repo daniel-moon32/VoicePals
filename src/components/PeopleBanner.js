@@ -143,7 +143,7 @@ export default function PeopleBanner({ setGroups, groups }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#a99aaf',
+        main: '#4682B4',
       },
       secondary: {
         main: '#777490',
@@ -211,7 +211,7 @@ export default function PeopleBanner({ setGroups, groups }) {
           <Button
             variant="contained"
             sx={{
-              bgcolor: '#777490',
+              bgcolor: '#4682B4',
               align: 'center',
               color: 'white',
               px: 3.5,
