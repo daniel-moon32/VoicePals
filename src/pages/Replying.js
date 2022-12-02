@@ -100,7 +100,6 @@ export default function Replying({ groups, setGroups }) {
             question={answer}
             setQuestion={setAnswer}
           />
-
         </Grid>
 
         {/* <SendButton /> */}
@@ -116,7 +115,6 @@ export default function Replying({ groups, setGroups }) {
               Send
             </Button>
           </ThemeProvider>
-
         </Grid>
 
       </Grid>

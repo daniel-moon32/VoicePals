@@ -144,16 +144,12 @@ export default function QuestionPlayer({ question }) {
             backgroundColor: 'primary.main',
             opacity: [0.9, 0.8, 0.7],
           },
-          mb: 2,
+          mb: 0,
         }}
       >
         <Typography style={{ overflowY: 'scroll', borderColor: 'red', borderWidth: 5 }} sx={{ height: 60, py: 0.5, px: 2 }}>
-          I know you told your friend you are not okay
-          and tell me what is wrong and why you never said you felt that way.
-          I guess you try to stay strong and fake a smile until I look away
-          but I have known you too long.
-          It hurts to watch your blue eyes fade to gray
-          as you fade away, as you fade away.
+          How much wood would a woodchuck chuck, if a woodchuck could chuck wood? He would chuck,
+          he would, as much as he could, and chuck as much wood as a woodchuck would.
         </Typography>
       </Box>
       )}
