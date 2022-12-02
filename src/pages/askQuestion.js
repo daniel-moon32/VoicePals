@@ -117,8 +117,8 @@ export default function AskQuestion({ groups, setGroups }) {
         >
           <Grid item paddingLeft={3} paddingRight={2}>
             <Typography className="other-components">
-              {`${groups[groupid - 1].members[0].name}, ${groups[groupid - 1].members[1].name}`}
-              {groups[groupid - 1].members.length - 2 ? `, and ${groups[groupid - 1].members.length - 2} others have been added.` : ''}
+              {`${groups[groupid - 1].members[0].name} ${groups[groupid - 1].members[1] ? `, ${groups[groupid - 1].members[1].name}` : ''}`}
+              {groups[groupid - 1].members.length - 2 > 0 ? `, and ${groups[groupid - 1].members.length - 2} others have been added.` : ''}
 
             </Typography>
           </Grid>
