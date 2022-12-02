@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   styled, Typography, Slider,
-  Paper, Stack,
+  Paper, Stack, Box,
 } from '@mui/material';
 
 import PauseIcon from '@mui/icons-material/Pause';
@@ -28,7 +28,7 @@ const PSlider = styled(Slider)(({ theme, ...props }) => ({
   },
 }));
 
-export default function AnswerPlayer({ currentSong }) {
+export default function AnswerPlayer({ currentSong, transcription }) {
   const audioPlayer = useRef();
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -109,6 +109,9 @@ export default function AnswerPlayer({ currentSong }) {
           <Typography sx={{ color: '#4682B4' }}>{formatTime(elapsed)}</Typography>
           <PSlider thumbless value={elapsed} max={duration} />
           <Typography sx={{ color: '#4682B4' }}>{formatTotalTime()}</Typography>
+          <Box sx={{ }}>
+            {transcription}
+          </Box>
         </Stack>
       </CustomPaper>
     </>

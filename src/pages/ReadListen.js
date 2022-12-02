@@ -37,6 +37,13 @@ export default function ReadListen({ data }) {
     },
   });
 
+  const JoshTrans = 'Have you guys ever wondered why there were so many different types of butterflies? There are literally, like, I don\'t even know, thousands of different types of butterflies and they are all different colors like red green blue some of them are rainbows. Like why are there so many different types of butterflies.';
+  const PoohTrans = 'You are my fire';
+  const PigletTrans = 'The one desire';
+  const JKTrans = 'Believe when I say';
+  const DMTrans = 'I want it that way';
+  const TigTrans = 'We are two worlds apart';
+
   return (
     <>
       <GroupName groupName="Summer BBQ" />
@@ -53,12 +60,12 @@ export default function ReadListen({ data }) {
                 }}
               />
             </div>
-            <AnswerPlayer currentSong={question} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={question} transcription={JoshTrans} sx={{ width: 10 }} />
           </Stack>
           <br />
 
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Fire} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={Fire} transcription={PoohTrans} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Pooh"
@@ -72,7 +79,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Desire} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={Desire} transcription={PigletTrans} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Piglet"
@@ -86,7 +93,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Believe} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={Believe} transcription={JKTrans} sx={{ width: 10 }} />
             <div>
               <Avatar
                 sx={{
@@ -100,7 +107,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Want} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={Want} transcription={DMTrans} sx={{ width: 10 }} />
             <div>
               <Avatar
                 sx={{
@@ -114,7 +121,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Two} sx={{ width: 10 }} />
+            <AnswerPlayer currentSong={Two} transcription={TigTrans} sx={{ width: 10 }} />
             <div>
               <Avatar
                 alt="Tigger"
