@@ -77,7 +77,6 @@ export default function Replying({ data }) {
             question={answer}
             setQuestion={setAnswer}
           />
-
         </Grid>
 
         {/* <SendButton /> */}
@@ -93,7 +92,6 @@ export default function Replying({ data }) {
               Send
             </Button>
           </ThemeProvider>
-
         </Grid>
 
       </Grid>
