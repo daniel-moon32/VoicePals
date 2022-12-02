@@ -121,7 +121,6 @@ export default function PeopleBanner({ setGroups, groups }) {
       return null;
     }).filter((item) => item !== null);
     const newGroupId = groups.length + 1;
-    console.log(membersList);
     setGroups([...groups, {
       group_id: newGroupId,
       group_name: groupName,
