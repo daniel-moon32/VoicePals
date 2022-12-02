@@ -2,23 +2,21 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 
 import {
-  createTheme, styled,
-  Paper, Typography,
+  styled, Paper, Typography,
 } from '@mui/material';
-import { ThemeProvider } from '@mui/system';
 
-export default function TextResponse() {
+export default function TextResponse({ text }) {
   const CustomPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: '#F0F0F0',
-    marginLeft: theme.spacing(4),
-    marginRight: theme.spacing(4),
-    marginBottom: theme.spacing(1.5),
     paddingRight: theme.spacing(1),
+    typography: {
+      fontFamily: ['sans-serif'].join(','),
+    },
   }));
 
   return (
-    <CustomPaper>
-      <Typography sx={{ p: 0.55 }} variant="subtitle2">Messages Time Traveling...</Typography>
+    <CustomPaper sx={{ width: 0.55 }}>
+      <Typography sx={{ p: 1, color: '#26517a' }} variant="subtitle2">{ text }</Typography>
     </CustomPaper>
   );
 }

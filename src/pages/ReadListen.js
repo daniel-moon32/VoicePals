@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/system';
 import GroupName from '../components/GroupName';
 import Player from '../components/Player';
 import AnswerPlayer from '../components/AnswerPlayer';
+import TextResponse from '../components/TextResponse';
 
 import Josh from '../images/Josh.png';
 import Piglet from '../images/piglet.png';
@@ -88,7 +89,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Believe} sx={{ width: 10 }} />
+            <TextResponse text="Believe when I say I want it that way..." />
             <div>
               <Avatar
                 sx={{
@@ -116,7 +117,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Two} sx={{ width: 10 }} />
+            <TextResponse text="That we are two worlds apart..." />
             <div>
               <Avatar
                 alt="Tigger"
@@ -127,6 +128,7 @@ export default function ReadListen({ data }) {
               />
             </div>
           </Stack>
+
         </Paper>
         <br />
 
