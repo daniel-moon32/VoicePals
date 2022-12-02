@@ -4,7 +4,7 @@ import TimeTravel from '../components/TimeTravel';
 // eslint-disable-next-line import/no-named-as-default
 import QuestionAudio from '../components/QuestionAudio';
 import WaitReplyNotice from '../components/WaitReplyNotice';
-// import JumptoListenButton from '../components/JumptoListenButton';
+import JumptoListenButton from '../components/JumptoListenButton';
 
 export default function WaitReplying({ groups }) {
   const { groupid } = useParams();
@@ -20,8 +20,8 @@ export default function WaitReplying({ groups }) {
       <TimeTravel peopleReplying="7" />
       <br />
       <WaitReplyNotice />
-      {/* <br />
-      <JumptoListenButton /> */}
+      <br />
+      <JumptoListenButton />
     </>
   );
 }

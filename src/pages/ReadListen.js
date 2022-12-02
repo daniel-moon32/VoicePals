@@ -89,7 +89,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Believe} sx={{ width: 10 }} />
+            <TextResponse text="Believe when I say I want it that way..." />
             <div>
               <Avatar
                 sx={{
@@ -117,7 +117,7 @@ export default function ReadListen({ data }) {
           <br />
 
           <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            <AnswerPlayer currentSong={Two} sx={{ width: 10 }} />
+            <TextResponse text="That we are two worlds apart..." />
             <div>
               <Avatar
                 alt="Tigger"
@@ -129,17 +129,6 @@ export default function ReadListen({ data }) {
             </div>
           </Stack>
           <br />
-
-          <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            <TextResponse text="tesjk" />
-            <Avatar
-              alt="Tigger"
-              src={Tigger}
-              sx={{
-                boxShadow: 5, width: 24, height: 24, float: 'right', mt: 1, mr: 2.5,
-              }}
-            />
-          </Stack>
 
         </Paper>
         <br />
