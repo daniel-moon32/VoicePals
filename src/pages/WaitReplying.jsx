@@ -8,11 +8,10 @@ import JumptoListenButton from '../components/JumptoListenButton';
 
 export default function WaitReplying({ groups }) {
   const { groupid } = useParams();
-
   const { question } = groups[groupid - 1];
   return (
     <>
-      <GroupName groupName="Long Live Pinto Bean" />
+      <GroupName groupName={question.group_name} />
       <br />
       <QuestionAudio question={question} />
       <hr style={{ width: '92%' }} />

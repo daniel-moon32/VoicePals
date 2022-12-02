@@ -128,7 +128,6 @@ export default function ReadListen({ data }) {
               />
             </div>
           </Stack>
-          <br />
 
         </Paper>
         <br />

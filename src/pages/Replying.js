@@ -12,7 +12,8 @@ import TimeTravel from '../components/TimeTravel';
 import QuestionAudio from '../components/QuestionAudio';
 import Record from '../components/Record';
 
-export default function Replying({ data }) {
+
+export default function Replying({ groups, setGroups }) {
   const navigate = useNavigate();
   const { groupid } = useParams();
   const [ansBlobURL, setAnsBlobURL] = useState('');
@@ -42,6 +43,28 @@ export default function Replying({ data }) {
       setErrorContent('Please enter the answer');
       return;
     }
+    const { responses } = groups[groupid - 1];
+
+    const newGroups = [...groups];
+
+    if (ansBlobURL === '') {
+      responses.push({
+        isURL: false,
+        content: answer,
+        username: groups[groupid - 1].leader,
+      });
+    }
+
+    if (answer === '') {
+      responses.push({
+        isURL: true,
+        content: ansBlobURL,
+        username: groups[groupid - 1].leader,
+      });
+    }
+
+    newGroups[groupid - 1].responses = responses;
+    setGroups(newGroups);
     navigate(`/answer/wait/${groupid}`);
   }
 
@@ -55,19 +78,19 @@ export default function Replying({ data }) {
         rowSpacing={2}
         paddingTop={2}
       >
-        <GroupName groupName={data[groupid - 1].group_name} />
+        <GroupName groupName={groups[groupid - 1].group_name} />
 
         <Grid item width={390} marginTop={2}>
-          <QuestionAudio question={data[groupid - 1].question} />
+          <QuestionAudio question={groups[groupid - 1].question} />
         </Grid>
         <Grid item width={390}>
           <hr style={{ width: '92%' }} />
         </Grid>
         <Grid item width={390}>
-          <TimeTravel peopleReplying={data[groupid - 1].responses.length} />
+          <TimeTravel peopleReplying={groups[groupid - 1].responses.length} />
         </Grid>
         <Grid item>
-          <DaysLeft days={data[groupid - 1].days_left} />
+          <DaysLeft days={groups[groupid - 1].days_left} />
         </Grid>
 
         <Grid item>

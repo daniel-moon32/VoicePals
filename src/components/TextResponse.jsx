@@ -2,8 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 
 import {
-  createTheme, styled,
-  Paper, Typography,
+  styled, Paper, Typography,
 } from '@mui/material';
 
 export default function TextResponse({ text }) {
