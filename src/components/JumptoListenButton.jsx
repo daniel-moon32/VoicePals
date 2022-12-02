@@ -2,9 +2,10 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function JumptoListenButton() {
+  const { groupid } = useParams();
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -16,7 +17,7 @@ export default function JumptoListenButton() {
   return (
     <center>
       <ThemeProvider theme={theme}>
-        <Link to="/listen/:groupid" style={{ color: 'inherit', textDecoration: 'none' }}>
+        <Link to={`/listen/${groupid}`} style={{ color: 'inherit', textDecoration: 'none' }}>
           <Button
             variant="contained"
             sx={{
