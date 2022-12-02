@@ -83,8 +83,8 @@ export default function AskQuestion({ groups, setGroups }) {
 
     const groupCopy = [...groups];
     const newGroup = {
-      id: groups.length + 1,
-      name: groupName,
+      group_id: parseInt(groupid, 10),
+      group_name: groupName,
       status: 'answer',
       members: groupMembers,
       leader: selectedValue,
@@ -96,10 +96,10 @@ export default function AskQuestion({ groups, setGroups }) {
       responses: [],
       days_left: 7,
       due_date: value,
+      person: groups[groupid - 1].person,
     };
     groupCopy[groupid - 1] = newGroup;
     setGroups(groupCopy);
-
     navigate(`/answer/${groupid}`);
   }
 
