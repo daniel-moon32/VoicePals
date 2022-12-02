@@ -86,7 +86,7 @@ export default function AskQuestion({ groups, setGroups }) {
       group_id: parseInt(groupid, 10),
       group_name: groupName,
       status: 'answer',
-      members: groupMembers,
+      members: groups[groupid - 1].members,
       leader: selectedValue,
       question: [{
         isUrl: !!blobURL,

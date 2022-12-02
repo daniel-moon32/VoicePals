@@ -111,7 +111,6 @@ export default function PeopleBanner({ setGroups, groups }) {
       setErrorContent('Please select at least one friend');
       return;
     }
-
     const membersList = checked.map((item, index) => {
       if (item) {
         return {
